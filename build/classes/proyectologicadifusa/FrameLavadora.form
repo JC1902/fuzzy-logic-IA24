@@ -153,14 +153,14 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jToggleButton3" pref="101" max="32767" attributes="0"/>
-                              <Component id="jToggleButton2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jToggleButton1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtbDeportiva" pref="101" max="32767" attributes="0"/>
+                              <Component id="jtbBlanca" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtbColor" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace pref="67" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jToggleButton5" pref="101" max="32767" attributes="0"/>
-                              <Component id="jToggleButton4" max="32767" attributes="0"/>
+                              <Component id="jtbSabanas" pref="101" max="32767" attributes="0"/>
+                              <Component id="jtbToallas" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
@@ -169,64 +169,79 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="12" max="32767" attributes="0"/>
-                          <Component id="jToggleButton2" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jtbColor" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtbBlanca" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jtbDeportiva" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="jToggleButton4" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtbToallas" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jToggleButton5" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jtbSabanas" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+                <Component class="javax.swing.JToggleButton" name="jtbColor">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Color"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbColorItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+                <Component class="javax.swing.JToggleButton" name="jtbBlanca">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Blanca"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbBlancaItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton3">
+                <Component class="javax.swing.JToggleButton" name="jtbDeportiva">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Deportiva"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbDeportivaItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton4">
+                <Component class="javax.swing.JToggleButton" name="jtbToallas">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Toallas"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbToallasItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton5">
+                <Component class="javax.swing.JToggleButton" name="jtbSabanas">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Sabanas"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbSabanasItemStateChanged"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -292,13 +307,13 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jToggleButton7" max="32767" attributes="0"/>
-                              <Component id="jToggleButton6" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtbSucia" max="32767" attributes="0"/>
+                              <Component id="jtbExtSucia" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jToggleButton8" max="32767" attributes="0"/>
-                              <Component id="jToggleButton9" pref="139" max="32767" attributes="0"/>
+                              <Component id="jtbMuySucia" max="32767" attributes="0"/>
+                              <Component id="jtbPocoSucia" pref="139" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
@@ -309,13 +324,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jToggleButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jToggleButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtbExtSucia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtbMuySucia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="43" max="32767" attributes="0"/>
+                          <EmptySpace pref="55" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jToggleButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jToggleButton9" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtbSucia" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtbPocoSucia" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -323,37 +338,49 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton6">
+                <Component class="javax.swing.JToggleButton" name="jtbExtSucia">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgSuciedadRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Extremadamente Sucia"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbExtSuciaItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton7">
+                <Component class="javax.swing.JToggleButton" name="jtbSucia">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgSuciedadRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Sucia"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbSuciaItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton8">
+                <Component class="javax.swing.JToggleButton" name="jtbMuySucia">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgSuciedadRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Muy Sucia"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbMuySuciaItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton9">
+                <Component class="javax.swing.JToggleButton" name="jtbPocoSucia">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgSuciedadRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Poco Sucia"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbPocoSuciaItemStateChanged"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -414,13 +441,13 @@
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jToggleButton13" max="32767" attributes="0"/>
-                              <Component id="jToggleButton11" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jtbMediana" max="32767" attributes="0"/>
+                              <Component id="jtbMasiva" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jToggleButton14" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="jToggleButton12" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jtbPequena" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="jtbGrande" min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
@@ -431,13 +458,13 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jToggleButton11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jToggleButton12" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtbMasiva" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtbGrande" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="43" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jToggleButton13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jToggleButton14" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtbMediana" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtbPequena" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -445,37 +472,49 @@
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton11">
+                <Component class="javax.swing.JToggleButton" name="jtbMasiva">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgCantidadRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Masiva"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbMasivaItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton12">
+                <Component class="javax.swing.JToggleButton" name="jtbGrande">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgCantidadRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Grande"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbGrandeItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton13">
+                <Component class="javax.swing.JToggleButton" name="jtbMediana">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgCantidadRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Mediana"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbMedianaItemStateChanged"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JToggleButton" name="jToggleButton14">
+                <Component class="javax.swing.JToggleButton" name="jtbPequena">
                   <Properties>
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgCantidadRopa"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Peque&#xf1;a"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbPequenaItemStateChanged"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

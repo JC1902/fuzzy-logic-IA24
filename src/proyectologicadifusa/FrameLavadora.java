@@ -19,7 +19,10 @@ public class FrameLavadora extends javax.swing.JFrame {
 
     Color frioOriginal, calidaOriginal, templadaOriginal;
     Font digitalFont;
-    
+    boolean color, blanca, deportiva, toallas, sabanas;
+    boolean extremadamenteSucia, muySucia, sucia, pocoSucia;
+    boolean masiva, grande, mediana, pequena;
+    boolean fria, calida, templada;
     public FrameLavadora() {
         initComponents();
         
@@ -69,25 +72,25 @@ public class FrameLavadora extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
+        jtbColor = new javax.swing.JToggleButton();
+        jtbBlanca = new javax.swing.JToggleButton();
+        jtbDeportiva = new javax.swing.JToggleButton();
+        jtbToallas = new javax.swing.JToggleButton();
+        jtbSabanas = new javax.swing.JToggleButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
-        jToggleButton6 = new javax.swing.JToggleButton();
-        jToggleButton7 = new javax.swing.JToggleButton();
-        jToggleButton8 = new javax.swing.JToggleButton();
-        jToggleButton9 = new javax.swing.JToggleButton();
+        jtbExtSucia = new javax.swing.JToggleButton();
+        jtbSucia = new javax.swing.JToggleButton();
+        jtbMuySucia = new javax.swing.JToggleButton();
+        jtbPocoSucia = new javax.swing.JToggleButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jToggleButton11 = new javax.swing.JToggleButton();
-        jToggleButton12 = new javax.swing.JToggleButton();
-        jToggleButton13 = new javax.swing.JToggleButton();
-        jToggleButton14 = new javax.swing.JToggleButton();
+        jtbMasiva = new javax.swing.JToggleButton();
+        jtbGrande = new javax.swing.JToggleButton();
+        jtbMediana = new javax.swing.JToggleButton();
+        jtbPequena = new javax.swing.JToggleButton();
         jPanel5 = new javax.swing.JPanel();
         jtbTempFria = new javax.swing.JToggleButton();
         jtbTempCalida = new javax.swing.JToggleButton();
@@ -117,20 +120,45 @@ public class FrameLavadora extends javax.swing.JFrame {
 
         jPanel6.setBackground(new java.awt.Color(183, 226, 255));
 
-        btgTipoRopa.add(jToggleButton1);
-        jToggleButton1.setText("Color");
+        btgTipoRopa.add(jtbColor);
+        jtbColor.setText("Color");
+        jtbColor.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbColorItemStateChanged(evt);
+            }
+        });
 
-        btgTipoRopa.add(jToggleButton2);
-        jToggleButton2.setText("Blanca");
+        btgTipoRopa.add(jtbBlanca);
+        jtbBlanca.setText("Blanca");
+        jtbBlanca.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbBlancaItemStateChanged(evt);
+            }
+        });
 
-        btgTipoRopa.add(jToggleButton3);
-        jToggleButton3.setText("Deportiva");
+        btgTipoRopa.add(jtbDeportiva);
+        jtbDeportiva.setText("Deportiva");
+        jtbDeportiva.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbDeportivaItemStateChanged(evt);
+            }
+        });
 
-        btgTipoRopa.add(jToggleButton4);
-        jToggleButton4.setText("Toallas");
+        btgTipoRopa.add(jtbToallas);
+        jtbToallas.setText("Toallas");
+        jtbToallas.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbToallasItemStateChanged(evt);
+            }
+        });
 
-        btgTipoRopa.add(jToggleButton5);
-        jToggleButton5.setText("Sabanas");
+        btgTipoRopa.add(jtbSabanas);
+        jtbSabanas.setText("Sabanas");
+        jtbSabanas.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbSabanasItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -139,31 +167,31 @@ public class FrameLavadora extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToggleButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                    .addComponent(jToggleButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                    .addComponent(jtbDeportiva, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                    .addComponent(jtbBlanca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtbColor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToggleButton5, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
-                    .addComponent(jToggleButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jtbSabanas, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                    .addComponent(jtbToallas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(34, 34, 34))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jToggleButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jToggleButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jtbColor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton3)
+                .addComponent(jtbBlanca)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtbDeportiva)
                 .addContainerGap())
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addComponent(jToggleButton4)
+                .addComponent(jtbToallas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jToggleButton5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jtbSabanas)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -196,17 +224,37 @@ public class FrameLavadora extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(183, 226, 255));
 
-        btgSuciedadRopa.add(jToggleButton6);
-        jToggleButton6.setText("Extremadamente Sucia");
+        btgSuciedadRopa.add(jtbExtSucia);
+        jtbExtSucia.setText("Extremadamente Sucia");
+        jtbExtSucia.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbExtSuciaItemStateChanged(evt);
+            }
+        });
 
-        btgSuciedadRopa.add(jToggleButton7);
-        jToggleButton7.setText("Sucia");
+        btgSuciedadRopa.add(jtbSucia);
+        jtbSucia.setText("Sucia");
+        jtbSucia.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbSuciaItemStateChanged(evt);
+            }
+        });
 
-        btgSuciedadRopa.add(jToggleButton8);
-        jToggleButton8.setText("Muy Sucia");
+        btgSuciedadRopa.add(jtbMuySucia);
+        jtbMuySucia.setText("Muy Sucia");
+        jtbMuySucia.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbMuySuciaItemStateChanged(evt);
+            }
+        });
 
-        btgSuciedadRopa.add(jToggleButton9);
-        jToggleButton9.setText("Poco Sucia");
+        btgSuciedadRopa.add(jtbPocoSucia);
+        jtbPocoSucia.setText("Poco Sucia");
+        jtbPocoSucia.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbPocoSuciaItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -215,12 +263,12 @@ public class FrameLavadora extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToggleButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jtbSucia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtbExtSucia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToggleButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton9, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
+                    .addComponent(jtbMuySucia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtbPocoSucia, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
@@ -228,12 +276,12 @@ public class FrameLavadora extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton6)
-                    .addComponent(jToggleButton8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                    .addComponent(jtbExtSucia)
+                    .addComponent(jtbMuySucia))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton7)
-                    .addComponent(jToggleButton9))
+                    .addComponent(jtbSucia)
+                    .addComponent(jtbPocoSucia))
                 .addContainerGap())
         );
 
@@ -265,17 +313,37 @@ public class FrameLavadora extends javax.swing.JFrame {
 
         jPanel8.setBackground(new java.awt.Color(183, 226, 255));
 
-        btgCantidadRopa.add(jToggleButton11);
-        jToggleButton11.setText("Masiva");
+        btgCantidadRopa.add(jtbMasiva);
+        jtbMasiva.setText("Masiva");
+        jtbMasiva.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbMasivaItemStateChanged(evt);
+            }
+        });
 
-        btgCantidadRopa.add(jToggleButton12);
-        jToggleButton12.setText("Grande");
+        btgCantidadRopa.add(jtbGrande);
+        jtbGrande.setText("Grande");
+        jtbGrande.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbGrandeItemStateChanged(evt);
+            }
+        });
 
-        btgCantidadRopa.add(jToggleButton13);
-        jToggleButton13.setText("Mediana");
+        btgCantidadRopa.add(jtbMediana);
+        jtbMediana.setText("Mediana");
+        jtbMediana.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbMedianaItemStateChanged(evt);
+            }
+        });
 
-        btgCantidadRopa.add(jToggleButton14);
-        jToggleButton14.setText("Pequeña");
+        btgCantidadRopa.add(jtbPequena);
+        jtbPequena.setText("Pequeña");
+        jtbPequena.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jtbPequenaItemStateChanged(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -284,12 +352,12 @@ public class FrameLavadora extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jToggleButton13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jToggleButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtbMediana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtbMasiva, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToggleButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jtbPequena, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtbGrande, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33))
         );
         jPanel8Layout.setVerticalGroup(
@@ -297,12 +365,12 @@ public class FrameLavadora extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton11)
-                    .addComponent(jToggleButton12))
+                    .addComponent(jtbMasiva)
+                    .addComponent(jtbGrande))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton13)
-                    .addComponent(jToggleButton14))
+                    .addComponent(jtbMediana)
+                    .addComponent(jtbPequena))
                 .addContainerGap())
         );
 
@@ -539,7 +607,7 @@ public class FrameLavadora extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 491, Short.MAX_VALUE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 491, Short.MAX_VALUE)
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -579,8 +647,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbTempFriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbTempFriaItemStateChanged
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            fria = true;
             jtbTempFria.setBackground( new Color( 120, 194, 231 ) );
         } else {
+            fria = false;
             jtbTempFria.setBackground( frioOriginal );
         }
     }//GEN-LAST:event_jtbTempFriaItemStateChanged
@@ -588,8 +658,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbTempCalidaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbTempCalidaItemStateChanged
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            calida = true;
             jtbTempCalida.setBackground( new Color( 230, 154, 108 ) );
         } else {
+            calida = false;
             jtbTempCalida.setBackground( calidaOriginal );
         }
     }//GEN-LAST:event_jtbTempCalidaItemStateChanged
@@ -597,11 +669,119 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbTempTempladaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbTempTempladaItemStateChanged
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            templada = true;
             jtbTempTemplada.setBackground( new Color( 98, 238, 98 ) );
         } else {
+            templada = false;
             jtbTempTemplada.setBackground( templadaOriginal );
+            
         }
     }//GEN-LAST:event_jtbTempTempladaItemStateChanged
+
+    private void jtbColorItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbColorItemStateChanged
+        // TODO add your handling code here:
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            color = true;
+        } else {
+            color = false;
+        }
+    }//GEN-LAST:event_jtbColorItemStateChanged
+
+    private void jtbToallasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbToallasItemStateChanged
+       if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            toallas = true;
+        } else {
+            toallas = false;
+        }
+    }//GEN-LAST:event_jtbToallasItemStateChanged
+
+    private void jtbBlancaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbBlancaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            blanca = true;
+        } else {
+            blanca = false;
+        }
+    }//GEN-LAST:event_jtbBlancaItemStateChanged
+
+    private void jtbDeportivaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbDeportivaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            deportiva = true;
+        } else {
+            deportiva = false;
+        }
+    }//GEN-LAST:event_jtbDeportivaItemStateChanged
+
+    private void jtbSabanasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbSabanasItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            sabanas = true;
+        } else {
+            sabanas = false;
+        }
+    }//GEN-LAST:event_jtbSabanasItemStateChanged
+
+    private void jtbExtSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbExtSuciaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            extremadamenteSucia = true;
+        } else {
+            extremadamenteSucia = false;
+        }
+    }//GEN-LAST:event_jtbExtSuciaItemStateChanged
+
+    private void jtbMuySuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMuySuciaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            muySucia = true;
+        } else {
+            muySucia = false;
+        }
+    }//GEN-LAST:event_jtbMuySuciaItemStateChanged
+
+    private void jtbSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbSuciaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            sucia = true;
+        } else {
+            sucia = false;
+        }
+    }//GEN-LAST:event_jtbSuciaItemStateChanged
+
+    private void jtbPocoSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbPocoSuciaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            pocoSucia = true;
+        } else {
+            pocoSucia = false;
+        }
+    }//GEN-LAST:event_jtbPocoSuciaItemStateChanged
+
+    private void jtbMasivaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMasivaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            masiva = true;
+        } else {
+            masiva = false;
+        }
+    }//GEN-LAST:event_jtbMasivaItemStateChanged
+
+    private void jtbGrandeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbGrandeItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            grande = true;
+        } else {
+            grande = false;
+        }
+    }//GEN-LAST:event_jtbGrandeItemStateChanged
+
+    private void jtbMedianaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMedianaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            mediana = true;
+        } else {
+            mediana = false;
+        }
+    }//GEN-LAST:event_jtbMedianaItemStateChanged
+
+    private void jtbPequenaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbPequenaItemStateChanged
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            pequena = true;
+        } else {
+            pequena = false;
+        }
+    }//GEN-LAST:event_jtbPequenaItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -662,24 +842,24 @@ public class FrameLavadora extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton11;
-    private javax.swing.JToggleButton jToggleButton12;
-    private javax.swing.JToggleButton jToggleButton13;
-    private javax.swing.JToggleButton jToggleButton14;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
-    private javax.swing.JToggleButton jToggleButton8;
-    private javax.swing.JToggleButton jToggleButton9;
     private javax.swing.JLabel jlblRPM;
     private javax.swing.JLabel jlblTiempoEnjuague;
     private javax.swing.JLabel jlblTiempoLavado;
+    private javax.swing.JToggleButton jtbBlanca;
+    private javax.swing.JToggleButton jtbColor;
+    private javax.swing.JToggleButton jtbDeportiva;
+    private javax.swing.JToggleButton jtbExtSucia;
+    private javax.swing.JToggleButton jtbGrande;
+    private javax.swing.JToggleButton jtbMasiva;
+    private javax.swing.JToggleButton jtbMediana;
+    private javax.swing.JToggleButton jtbMuySucia;
+    private javax.swing.JToggleButton jtbPequena;
+    private javax.swing.JToggleButton jtbPocoSucia;
+    private javax.swing.JToggleButton jtbSabanas;
+    private javax.swing.JToggleButton jtbSucia;
     private javax.swing.JToggleButton jtbTempCalida;
     private javax.swing.JToggleButton jtbTempFria;
     private javax.swing.JToggleButton jtbTempTemplada;
+    private javax.swing.JToggleButton jtbToallas;
     // End of variables declaration//GEN-END:variables
 }
