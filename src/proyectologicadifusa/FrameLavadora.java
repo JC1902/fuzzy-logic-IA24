@@ -19,10 +19,16 @@ public class FrameLavadora extends javax.swing.JFrame {
     boolean masiva, grande, mediana, pequena;
     boolean fria, calida, templada;
     
+    // Funciones de membresia entradas
     double tipoColor, tipoBlanca, tipoDeportiva, tipoToallas, tipoSabanas;
     double pSucia, _sucia, mSucia, eSucia;
     double cantPequena, cantMediana, cantGrande, cantMasiva;
     double tempFria, tempCalida, tempTemplada;
+    
+    // Funciones de membresia salidas
+    double lavadoMCorto, lavadoCorto, lavadoMedio, lavadoLargo, lavadoMLargo;
+    double enjuagueMCorto, enjuagueCorto, enjuagueMedio, enjuagueLargo, enjuagueMLargo;
+    double rpmMLento, rpmBajo, rpmMedio, rpmRapido, rpmMRapido;
     
     public FrameLavadora() {
         initComponents();
@@ -895,6 +901,24 @@ public class FrameLavadora extends javax.swing.JFrame {
             tempFria = FuncionesMembresia.membershipTriangular(pSucia, 15.0, 15.0, 37.5);
             tempCalida = FuncionesMembresia.membershipTriangular(pSucia, 37.5, 60.0, 60.0);
             tempTemplada = FuncionesMembresia.membershipTriangular(pSucia, 19.5, 37.5, 55.5);
+            
+            lavadoMCorto = FuncionesMembresia.membershipTrapezoidal(rpmBajo, 0.0, 0.0, 5.0, 10.0);
+            lavadoCorto = FuncionesMembresia.membershipTriangular(rpmBajo, 0.0, 14.0, 41.0);
+            lavadoMedio = FuncionesMembresia.membershipTriangular(rpmBajo, 11.0, 30.0, 44.0);
+            lavadoLargo = FuncionesMembresia.membershipTriangular(rpmBajo, 23.0, 47.0, 60.0);
+            lavadoMLargo = FuncionesMembresia.membershipTrapezoidal(rpmBajo, 50.0, 55.0, 60.0, 60.0);
+            
+            enjuagueMCorto = FuncionesMembresia.membershipTrapezoidal(rpmBajo, 0.0, 0.0, 5.0, 10.0);
+            enjuagueCorto = FuncionesMembresia.membershipTriangular(rpmBajo, 0.0, 14.0, 41.0);
+            enjuagueMedio = FuncionesMembresia.membershipTriangular(rpmBajo, 11.0, 30.0, 44.0);
+            enjuagueLargo = FuncionesMembresia.membershipTriangular(rpmBajo, 23.0, 47.0, 60.0);
+            enjuagueMLargo = FuncionesMembresia.membershipTrapezoidal(rpmBajo, 50.0, 55.0, 60.0, 60.0);
+            
+            rpmMLento = FuncionesMembresia.membershipTrapezoidal(rpmBajo, 0.0, 400.0, 600.0, 900.0);
+            rpmBajo = FuncionesMembresia.membershipTriangular(rpmBajo, 550.0, 850.0, 1170.0);
+            rpmMedio = FuncionesMembresia.membershipTriangular(rpmBajo, 800.0, 1170.0, 1570.0);
+            rpmRapido = FuncionesMembresia.membershipTriangular(rpmBajo, 1180.0, 1501.0, 1780.0);
+            rpmMRapido = FuncionesMembresia.membershipTrapezoidal(rpmBajo, 1400.0, 1700.0, 2000.0, 2000.0);
         }
     }//GEN-LAST:event_jtgbInicioItemStateChanged
 
