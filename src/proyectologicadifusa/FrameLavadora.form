@@ -13,6 +13,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Proyecto L&#xf3;gica Difusa"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -59,8 +60,8 @@
                       <Component id="jPanel9" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jPanel2" pref="491" max="32767" attributes="0"/>
-                              <Component id="jPanel3" pref="491" max="32767" attributes="0"/>
+                              <Component id="jPanel2" pref="519" max="32767" attributes="0"/>
+                              <Component id="jPanel3" pref="519" max="32767" attributes="0"/>
                               <Component id="jPanel4" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -68,7 +69,10 @@
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jToggleButton1" min="-2" pref="150" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jtgbInicio" min="-2" pref="150" max="-2" attributes="0"/>
+                      <Component id="jbtnMostrarReglas" max="32767" attributes="0"/>
+                  </Group>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -78,25 +82,28 @@
               <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jPanel5" max="32767" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
+                          <Component id="jtgbInicio" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="229" max="-2" attributes="0"/>
-                          <Component id="jToggleButton1" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel2" pref="190" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanel3" min="-2" pref="142" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel5" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel9" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jbtnMostrarReglas" alignment="1" min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="jPanel9" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -126,11 +133,11 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel1" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel6" max="32767" attributes="0"/>
+                          <Component id="jLabel1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -153,7 +160,7 @@
             <Container class="javax.swing.JPanel" name="jPanel6">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="e2" red="b7" type="rgb"/>
+                  <Color blue="ff" green="b2" red="be" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -162,15 +169,15 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jtbDeportiva" pref="101" max="32767" attributes="0"/>
-                              <Component id="jtbBlanca" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jtbColor" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbDeportiva" min="-2" pref="128" max="-2" attributes="0"/>
+                              <Component id="jtbColor" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
+                              <Component id="jtbBlanca" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jtbSabanas" pref="101" max="32767" attributes="0"/>
-                              <Component id="jtbToallas" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbToallas" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
+                              <Component id="jtbSabanas" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
@@ -179,20 +186,24 @@
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace pref="12" max="32767" attributes="0"/>
-                          <Component id="jtbColor" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jtbBlanca" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jtbDeportiva" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                                  <Component id="jtbToallas" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jtbSabanas" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jtbColor" min="-2" pref="41" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jtbBlanca" min="-2" pref="48" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jtbDeportiva" min="-2" pref="48" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                          <Component id="jtbToallas" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jtbSabanas" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="27" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -203,7 +214,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Color"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/COLOR2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/COLOR1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/COLOR3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbColorItemStateChanged"/>
@@ -214,7 +235,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Blanca"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/BLANCA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/BLANCA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/BLANCA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbBlancaItemStateChanged"/>
@@ -225,7 +256,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Deportiva"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/DEPORTIVA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/DEPORTIVA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/DEPORTIVA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbDeportivaItemStateChanged"/>
@@ -236,7 +277,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Toallas"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/TOALLAS2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/TOALLAS1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/TOALLAS3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbToallasItemStateChanged"/>
@@ -247,7 +298,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgTipoRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Sabanas"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/SABANAS2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/SABANAS1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/SABANAS3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbSabanasItemStateChanged"/>
@@ -307,7 +368,7 @@
             <Container class="javax.swing.JPanel" name="jPanel7">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="e2" red="b7" type="rgb"/>
+                  <Color blue="ff" green="b2" red="be" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -315,17 +376,17 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jtbSucia" max="32767" attributes="0"/>
-                              <Component id="jtbExtSucia" alignment="0" max="32767" attributes="0"/>
-                          </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jtbMuySucia" max="32767" attributes="0"/>
-                              <Component id="jtbPocoSucia" pref="139" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbExtSucia" min="-2" pref="128" max="-2" attributes="0"/>
+                              <Component id="jtbSucia" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="40" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbPocoSucia" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
+                              <Component id="jtbMuySucia" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -333,14 +394,14 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtbExtSucia" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtbMuySucia" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbExtSucia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jtbMuySucia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="43" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtbSucia" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtbPocoSucia" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbSucia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jtbPocoSucia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -353,7 +414,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgSuciedadRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Extremadamente Sucia"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/EXTSUCIA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/EXTSUCIA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/EXTSUCIA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbExtSuciaItemStateChanged"/>
@@ -364,7 +435,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgSuciedadRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Sucia"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/SUCIA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/SUCIA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/SUCIA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbSuciaItemStateChanged"/>
@@ -375,7 +456,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgSuciedadRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Muy Sucia"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MUYSUCIA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MUYSUCIA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MUYSUCIA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbMuySuciaItemStateChanged"/>
@@ -386,7 +477,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgSuciedadRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Poco Sucia"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/PSUCIA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/PSUCIA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/PSUCIA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbPocoSuciaItemStateChanged"/>
@@ -441,7 +542,7 @@
             <Container class="javax.swing.JPanel" name="jPanel8">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="e2" red="b7" type="rgb"/>
+                  <Color blue="ff" green="b2" red="be" type="rgb"/>
                 </Property>
               </Properties>
 
@@ -449,15 +550,15 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace pref="37" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jtbMediana" max="32767" attributes="0"/>
-                              <Component id="jtbMasiva" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbMasiva" min="-2" pref="128" max="-2" attributes="0"/>
+                              <Component id="jtbMediana" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jtbPequena" min="-2" pref="100" max="-2" attributes="0"/>
-                              <Component id="jtbGrande" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbGrande" min="-2" pref="128" max="-2" attributes="0"/>
+                              <Component id="jtbPequena" min="-2" pref="128" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
@@ -467,16 +568,16 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtbMasiva" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtbGrande" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbMasiva" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jtbGrande" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="43" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtbMediana" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtbPequena" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jtbPequena" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jtbMediana" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -487,7 +588,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgCantidadRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Masiva"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MASIVA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MASIVA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MASIVA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbMasivaItemStateChanged"/>
@@ -498,7 +609,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgCantidadRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Grande"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/GRANDE2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/GRANDE1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/GRANDE3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbGrandeItemStateChanged"/>
@@ -509,7 +630,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgCantidadRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Mediana"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MEDIANA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MEDIANA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/MEDIANA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbMedianaItemStateChanged"/>
@@ -520,7 +651,17 @@
                     <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                       <ComponentRef name="btgCantidadRopa"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Peque&#xf1;a"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/PEQUENA2-removebg-preview.png"/>
+                    </Property>
+                    <Property name="borderPainted" type="boolean" value="false"/>
+                    <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/PEQUENA1-removebg-preview.png"/>
+                    </Property>
+                    <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/botonesiconos/PEQUENA3-removebg-preview.png"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbPequenaItemStateChanged"/>
@@ -549,12 +690,14 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jtbTempFria" max="32767" attributes="0"/>
-                                  <Component id="jtbTempCalida" alignment="1" max="32767" attributes="0"/>
-                                  <Component id="jtbTempTemplada" alignment="1" pref="100" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jtbTempCalida" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="jtbTempTemplada" alignment="1" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jtbTempFria" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -566,11 +709,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" pref="65" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jtbTempFria" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtbTempFria" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jtbTempCalida" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtbTempCalida" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jtbTempTemplada" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtbTempTemplada" min="-2" pref="48" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -588,11 +731,21 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Yu Gothic UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Fr&#xed;a"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/FRIA2-removebg-preview.png"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                     <BevelBorder/>
                   </Border>
+                </Property>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/FRIA1-removebg-preview.png"/>
+                </Property>
+                <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/FRIA3-removebg-preview.png"/>
                 </Property>
               </Properties>
               <Events>
@@ -610,13 +763,22 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Yu Gothic UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="C&#xe1;lida"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/CALIDA2-removebg-preview.png"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                     <BevelBorder/>
                   </Border>
                 </Property>
-                <Property name="opaque" type="boolean" value="true"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/CALIDA1-removebg-preview.png"/>
+                </Property>
+                <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/CALIDA3-removebg-preview.png"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbTempCalidaItemStateChanged"/>
@@ -633,13 +795,22 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Yu Gothic UI" size="14" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Templada"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/TEMP2-removebg-preview.png"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
                     <BevelBorder/>
                   </Border>
                 </Property>
-                <Property name="opaque" type="boolean" value="true"/>
+                <Property name="borderPainted" type="boolean" value="false"/>
+                <Property name="contentAreaFilled" type="boolean" value="false"/>
+                <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/TEMP1-removebg-preview.png"/>
+                </Property>
+                <Property name="selectedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/botonesiconos/TEMP3-removebg-preview.png"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtbTempTempladaItemStateChanged"/>
@@ -667,7 +838,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jlblTiempoLavado" max="32767" attributes="0"/>
                           <Component id="jPanel11" min="-2" max="-2" attributes="0"/>
@@ -682,14 +853,14 @@
                           <Component id="jlblRPM" alignment="1" min="-2" pref="153" max="-2" attributes="0"/>
                           <Component id="jPanel12" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jPanel11" max="32767" attributes="0"/>
                           <Component id="jPanel12" max="32767" attributes="0"/>
@@ -701,7 +872,7 @@
                           <Component id="jlblTiempoLavado" alignment="0" max="32767" attributes="0"/>
                           <Component id="jlblTiempoEnjuague" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -877,7 +1048,7 @@
             </Container>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+        <Component class="javax.swing.JToggleButton" name="jtgbInicio">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/botonesiconos/3.png"/>
@@ -892,7 +1063,26 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jToggleButton1ItemStateChanged"/>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jtgbInicioItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jbtnMostrarReglas">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="cc" red="cc" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Yu Gothic UI Semilight" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Mostrar reglas"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnMostrarReglasActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

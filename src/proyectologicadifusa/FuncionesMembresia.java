@@ -66,6 +66,7 @@ public class FuncionesMembresia {
             return 0.0;
         }
     }
+    
     public static double pendiente(double x1, double x2) {
         if (x1 == x2) {
             // La pendiente es indefinida si los puntos tienen la misma coordenada x
