@@ -1,13 +1,10 @@
 package proyectologicadifusa;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
 import javax.swing.JFrame;
 
 /**
@@ -16,18 +13,19 @@ import javax.swing.JFrame;
  */
 public class FrameLavadora extends javax.swing.JFrame {
 
-    Color frioOriginal, calidaOriginal, templadaOriginal;
     Font digitalFont;
     boolean color, blanca, deportiva, toallas, sabanas;
     boolean extremadamenteSucia, muySucia, sucia, pocoSucia;
     boolean masiva, grande, mediana, pequena;
     boolean fria, calida, templada;
+    
+    double tipoColor, tipoBlanca, tipoDeportiva, tipoToallas, tipoSabanas;
+    double pSucia, _sucia, mSucia, eSucia;
+    double cantPequena, cantMediana, cantGrande, cantMasiva;
+    double tempFria, tempCalida, tempTemplada;
+    
     public FrameLavadora() {
         initComponents();
-        
-        frioOriginal = jtbTempFria.getBackground();
-        calidaOriginal = jtbTempCalida.getBackground();
-        templadaOriginal = jtbTempTemplada.getBackground();
         
         try {
             // Cambia "fonts/tu_fuente.ttf" con la ruta relativa adecuada a tu archivo TTF dentro de tu proyecto
@@ -747,10 +745,8 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             fria = true;
-            jtbTempFria.setBackground( new Color( 120, 194, 231 ) );
         } else {
             fria = false;
-            jtbTempFria.setBackground( frioOriginal );
         }
     }//GEN-LAST:event_jtbTempFriaItemStateChanged
 
@@ -758,10 +754,8 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             calida = true;
-            jtbTempCalida.setBackground( new Color( 230, 154, 108 ) );
         } else {
             calida = false;
-            jtbTempCalida.setBackground( calidaOriginal );
         }
     }//GEN-LAST:event_jtbTempCalidaItemStateChanged
 
@@ -769,11 +763,8 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             templada = true;
-            jtbTempTemplada.setBackground( new Color( 98, 238, 98 ) );
         } else {
             templada = false;
-            jtbTempTemplada.setBackground( templadaOriginal );
-            
         }
     }//GEN-LAST:event_jtbTempTempladaItemStateChanged
 
@@ -884,6 +875,27 @@ public class FrameLavadora extends javax.swing.JFrame {
 
     private void jtgbInicioItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtgbInicioItemStateChanged
         // TODO add your handling code here:
+        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
+            tipoColor = FuncionesMembresia.membershipTriangular(pSucia, 0.0, 0.0, 0.25);
+            tipoBlanca = FuncionesMembresia.membershipTriangular(pSucia, 0.07, 0.25, 0.47); 
+            tipoDeportiva = FuncionesMembresia.membershipTriangular(pSucia, 0.25, 0.47, 0.7);
+            tipoToallas = FuncionesMembresia.membershipTriangular(pSucia, 0.508, 0.71372, 0.901);
+            tipoSabanas = FuncionesMembresia.membershipTriangular(pSucia, 0.7, 1.0, 1);
+            
+            pSucia = FuncionesMembresia.membershipTriangular(pSucia, 0.0, 0.0, 0.34);
+            _sucia = FuncionesMembresia.membershipTriangular(pSucia, 0.1, 0.34, 0.64);
+            mSucia = FuncionesMembresia.membershipTriangular(pSucia, 0.34, 0.64, 0.9);
+            eSucia = FuncionesMembresia.membershipTriangular(pSucia, 0.64, 1.0, 1.0);
+            
+            cantPequena = FuncionesMembresia.membershipTriangular(pSucia, 0.0, 0.0, 8.0);
+            cantMediana = FuncionesMembresia.membershipTriangular(pSucia, 2.0, 8.0, 14.0);
+            cantGrande = FuncionesMembresia.membershipTriangular(pSucia, 8.0, 14.0, 20.0);
+            cantMasiva = FuncionesMembresia.membershipTriangular(pSucia, 14.0, 22.0, 22.0);
+            
+            tempFria = FuncionesMembresia.membershipTriangular(pSucia, 15.0, 15.0, 37.5);
+            tempCalida = FuncionesMembresia.membershipTriangular(pSucia, 37.5, 60.0, 60.0);
+            tempTemplada = FuncionesMembresia.membershipTriangular(pSucia, 19.5, 37.5, 55.5);
+        }
     }//GEN-LAST:event_jtgbInicioItemStateChanged
 
     private void jbtnMostrarReglasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMostrarReglasActionPerformed
