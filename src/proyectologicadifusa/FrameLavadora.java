@@ -5,6 +5,7 @@ import java.awt.FontFormatException;
 import java.awt.event.ItemEvent;
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 import javax.swing.JFrame;
 
 /**
@@ -14,6 +15,7 @@ import javax.swing.JFrame;
 public class FrameLavadora extends javax.swing.JFrame {
 
     Font digitalFont;
+    // Variables para determinar que fue seleccionado
     boolean color, blanca, deportiva, toallas, sabanas;
     boolean extremadamenteSucia, muySucia, sucia, pocoSucia;
     boolean masiva, grande, mediana, pequena;
@@ -24,12 +26,18 @@ public class FrameLavadora extends javax.swing.JFrame {
     double pSucia, _sucia, mSucia, eSucia;
     double cantPequena, cantMediana, cantGrande, cantMasiva;
     double tempFria, tempCalida, tempTemplada;
+    // Valores para las funciones de membresia
+    double tipoDeRopa;
+    double suciedad;
+    double cantidadRopa;
+    double temperatura;
     
     // Funciones de membresia salidas
     double lavadoMCorto, lavadoCorto, lavadoMedio, lavadoLargo, lavadoMLargo;
     double enjuagueMCorto, enjuagueCorto, enjuagueMedio, enjuagueLargo, enjuagueMLargo;
     double rpmMLento, rpmBajo, rpmMedio, rpmRapido, rpmMRapido;
     
+    Random azar = new Random();
     public FrameLavadora() {
         initComponents();
         
@@ -751,8 +759,10 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             fria = true;
+            temperatura = azar.nextInt( 23 ) + 15.5;
         } else {
             fria = false;
+            
         }
     }//GEN-LAST:event_jtbTempFriaItemStateChanged
 
@@ -760,8 +770,10 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             calida = true;
+            temperatura = azar.nextInt( 37 ) + 19.5; 
         } else {
             calida = false;
+            
         }
     }//GEN-LAST:event_jtbTempCalidaItemStateChanged
 
@@ -769,8 +781,10 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             templada = true;
+            temperatura = azar.nextInt( 24 ) + 37.5; 
         } else {
             templada = false;
+            
         }
     }//GEN-LAST:event_jtbTempTempladaItemStateChanged
 
@@ -778,46 +792,53 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             color = true;
+            tipoDeRopa = azar.nextDouble() * 0.25;
         } else {
             color = false;
+            
         }
     }//GEN-LAST:event_jtbColorItemStateChanged
 
     private void jtbToallasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbToallasItemStateChanged
        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             toallas = true;
+            tipoDeRopa = ( azar.nextDouble() * 0.4 ) + 0.50;
         } else {
-            toallas = false;
+            
         }
     }//GEN-LAST:event_jtbToallasItemStateChanged
 
     private void jtbBlancaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbBlancaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             blanca = true;
+            tipoDeRopa = ( azar.nextDouble() * 0.40 ) + 0.07;
         } else {
-            blanca = false;
+            
         }
     }//GEN-LAST:event_jtbBlancaItemStateChanged
 
     private void jtbDeportivaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbDeportivaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             deportiva = true;
+            tipoDeRopa = ( azar.nextDouble() * 0.45 ) + 0.25;
         } else {
-            deportiva = false;
+            
         }
     }//GEN-LAST:event_jtbDeportivaItemStateChanged
 
     private void jtbSabanasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbSabanasItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             sabanas = true;
+            tipoDeRopa = ( azar.nextDouble() * 0.3 ) + 0.7;
         } else {
-            sabanas = false;
+            
         }
     }//GEN-LAST:event_jtbSabanasItemStateChanged
 
     private void jtbExtSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbExtSuciaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             extremadamenteSucia = true;
+            suciedad = ( azar.nextDouble() * 0.36 ) + 0.64;
         } else {
             extremadamenteSucia = false;
         }
@@ -826,6 +847,7 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbMuySuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMuySuciaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             muySucia = true;
+            suciedad = ( azar.nextDouble() * 0.56 ) + 0.34;
         } else {
             muySucia = false;
         }
@@ -834,6 +856,7 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbSuciaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             sucia = true;
+            suciedad = ( azar.nextDouble() * 0.54 ) + 0.1;
         } else {
             sucia = false;
         }
@@ -842,6 +865,7 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbPocoSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbPocoSuciaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             pocoSucia = true;
+            suciedad = azar.nextDouble() * 0.34;
         } else {
             pocoSucia = false;
         }
@@ -850,6 +874,7 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbMasivaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMasivaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             masiva = true;
+            cantidadRopa = azar.nextInt( 8 ) + 14;
         } else {
             masiva = false;
         }
@@ -858,6 +883,7 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbGrandeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbGrandeItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             grande = true;
+            cantidadRopa = azar.nextInt( 12 ) + 8;
         } else {
             grande = false;
         }
@@ -866,6 +892,7 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbMedianaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMedianaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             mediana = true;
+            cantidadRopa = azar.nextInt( 12 ) + 2;
         } else {
             mediana = false;
         }
@@ -874,6 +901,7 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbPequenaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbPequenaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             pequena = true;
+            cantidadRopa = azar.nextInt( 9 );
         } else {
             pequena = false;
         }
