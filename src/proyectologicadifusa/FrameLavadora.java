@@ -4454,66 +4454,82 @@ public class FrameLavadora extends javax.swing.JFrame {
                 if(objeto.isCalida()&&listaVariablesEntradas.get(j).contains("calida")){
                     cadenaEntradas+="calida,";
                     contador++;
+                    break;
                 }
                 if(objeto.isFria()&&listaVariablesEntradas.get(j).contains("fria")){
                     cadenaEntradas+="fria,";
                     contador++;
+                    break;
                 }
                 if(objeto.isTemplada()&&listaVariablesEntradas.get(j).contains("templada")){
                     cadenaEntradas+="templada,";
                     contador++;
+                    break;
                 }
                 if(objeto.isGrande()&&listaVariablesEntradas.get(j).contains("grande")){
                     cadenaEntradas+="grande,";
                     contador++;
+                    break;
                 }
                 if(objeto.isMasiva()&&listaVariablesEntradas.get(j).contains("masiva")){
                     cadenaEntradas+="masiva,";
                     contador++;
+                    break;
                 }
                 if(objeto.isMediana()&&listaVariablesEntradas.get(j).contains("mediana")){
                     cadenaEntradas+="mediana,";
                     contador++;
+                    break;
                 }
                 if(objeto.isPequena()&&listaVariablesEntradas.get(j).contains("pequena")){
                     cadenaEntradas+="pequena,";
                     contador++;
+                    break;
                 }
                 if(objeto.isSucia()&&listaVariablesEntradas.get(j).contains("sucia")){
                     cadenaEntradas+="sucia,";
                     contador++;
+                    break;
                 }
                 if(objeto.ispSucia()&&listaVariablesEntradas.get(j).contains("pocoSucia")){
                     cadenaEntradas+="pocoSucia,";
                     contador++;
+                    break;
                 }
                 if(objeto.ismSucia()&&listaVariablesEntradas.get(j).contains("muySucia")){
                     cadenaEntradas+="muySucia,";
                     contador++;
+                    break;
                 }
                 if(objeto.iseSucia()&&listaVariablesEntradas.get(j).contains("extremadamenteSucia")){
                     cadenaEntradas+="extSucia,";
                     contador++;
+                    break;
                 }
                 if(objeto.isTipoBlanca()&&listaVariablesEntradas.get(j).contains("blanca")){
                     cadenaEntradas+="blanca,";
                     contador++;
+                    break;
                 }
                 if(objeto.isTipoColor()&&listaVariablesEntradas.get(j).contains("color")){
                     cadenaEntradas+="color,";
                     contador++;
+                    break;
                 }
                 if(objeto.isTipoToallas()&&listaVariablesEntradas.get(j).contains("toallas")){
                     cadenaEntradas+="toallas,";
                     contador++;
+                    break;
                 }
                 if(objeto.isTipoDeportiva()&&listaVariablesEntradas.get(j).contains("deportiva")){
                     cadenaEntradas+="deportiva,";
                     contador++;
+                    break;
                 }
                 if(objeto.isTipoSabanas()&&listaVariablesEntradas.get(j).contains("sabanas")){
                     cadenaEntradas+="sabanas,";
                     contador++;
+                    break;
                 }
             }
             index++;
