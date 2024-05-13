@@ -17,6 +17,10 @@ public class PanelReglasActivadas extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void setValueInPanel(String value) {
+        jtxtReglas.setText(value);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,7 +32,7 @@ public class PanelReglasActivadas extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jtxtReglas = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(450, 450));
@@ -39,11 +43,11 @@ public class PanelReglasActivadas extends javax.swing.JPanel {
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jtxtReglas.setEditable(false);
+        jtxtReglas.setColumns(20);
+        jtxtReglas.setLineWrap(true);
+        jtxtReglas.setRows(5);
+        jScrollPane1.setViewportView(jtxtReglas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -71,6 +75,6 @@ public class PanelReglasActivadas extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jtxtReglas;
     // End of variables declaration//GEN-END:variables
 }

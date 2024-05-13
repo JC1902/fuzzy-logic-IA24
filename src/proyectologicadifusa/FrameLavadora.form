@@ -381,7 +381,7 @@
                               <Component id="jtbExtSucia" min="-2" pref="128" max="-2" attributes="0"/>
                               <Component id="jtbSucia" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="40" max="32767" attributes="0"/>
+                          <EmptySpace pref="52" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jtbPocoSucia" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
                               <Component id="jtbMuySucia" alignment="1" min="-2" pref="128" max="-2" attributes="0"/>
@@ -398,7 +398,7 @@
                               <Component id="jtbExtSucia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                               <Component id="jtbMuySucia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="22" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jtbSucia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                               <Component id="jtbPocoSucia" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
