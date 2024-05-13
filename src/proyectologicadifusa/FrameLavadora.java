@@ -6,6 +6,7 @@ import java.awt.event.ItemEvent;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 import javax.swing.JFrame;
@@ -17,6 +18,7 @@ import javax.swing.JFrame;
 public class FrameLavadora extends javax.swing.JFrame {
 
     Font digitalFont;
+    ArrayList<String> listaVariablesEntradas = new ArrayList<String>();
     // Variables para determinar que fue seleccionado
     boolean color, blanca, deportiva, toallas, sabanas;
     boolean extremadamenteSucia, muySucia, sucia, pocoSucia;
@@ -163,6 +165,11 @@ public class FrameLavadora extends javax.swing.JFrame {
         jtbColor.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jtbColorItemStateChanged(evt);
+            }
+        });
+        jtbColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtbColorActionPerformed(evt);
             }
         });
 
@@ -337,7 +344,7 @@ public class FrameLavadora extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtbExtSucia, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtbSucia, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtbPocoSucia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtbMuySucia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -350,7 +357,7 @@ public class FrameLavadora extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtbExtSucia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtbMuySucia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jtbSucia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtbPocoSucia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -779,8 +786,10 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             fria = true;
+            listaVariablesEntradas.add("fria");
             temperatura = azar.nextInt( 23 ) + 15.5;
         } else {
+            listaVariablesEntradas.remove("fria");
             fria = false;
             
         }
@@ -790,8 +799,10 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             calida = true;
+            listaVariablesEntradas.add("calida");
             temperatura = azar.nextInt( 24 ) + 37.5; 
         } else {
+            listaVariablesEntradas.remove("calida");
             calida = false;
             
         }
@@ -801,8 +812,10 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             templada = true;
+            listaVariablesEntradas.add("templada");
             temperatura = azar.nextInt( 37 ) + 19.5; 
         } else {
+            listaVariablesEntradas.remove("templada");
             templada = false;
             
         }
@@ -812,8 +825,10 @@ public class FrameLavadora extends javax.swing.JFrame {
         // TODO add your handling code here:
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             color = true;
+            listaVariablesEntradas.add("color");
             tipoDeRopa = azar.nextDouble() * 0.25;
         } else {
+            listaVariablesEntradas.remove("color");
             color = false;
             
         }
@@ -822,44 +837,54 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbToallasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbToallasItemStateChanged
        if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             toallas = true;
+            listaVariablesEntradas.add("toallas");
             tipoDeRopa = ( azar.nextDouble() * 0.4 ) + 0.50;
         } else {
-            
+            toallas = false;
+            listaVariablesEntradas.remove("toallas");
         }
     }//GEN-LAST:event_jtbToallasItemStateChanged
 
     private void jtbBlancaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbBlancaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             blanca = true;
+            listaVariablesEntradas.add("blanca");
             tipoDeRopa = ( azar.nextDouble() * 0.40 ) + 0.07;
         } else {
-            
+            listaVariablesEntradas.remove("blanca");
+            blanca=false;
         }
     }//GEN-LAST:event_jtbBlancaItemStateChanged
 
     private void jtbDeportivaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbDeportivaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             deportiva = true;
+            listaVariablesEntradas.add("deportiva");
             tipoDeRopa = ( azar.nextDouble() * 0.45 ) + 0.25;
         } else {
-            
+            deportiva = false;
+            listaVariablesEntradas.remove("deportiva");
         }
     }//GEN-LAST:event_jtbDeportivaItemStateChanged
 
     private void jtbSabanasItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbSabanasItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             sabanas = true;
+            listaVariablesEntradas.add("sabanas");
             tipoDeRopa = ( azar.nextDouble() * 0.3 ) + 0.7;
         } else {
-            
+            sabanas = false;
+            listaVariablesEntradas.remove("sabanas");
         }
     }//GEN-LAST:event_jtbSabanasItemStateChanged
 
     private void jtbExtSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbExtSuciaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             extremadamenteSucia = true;
+            listaVariablesEntradas.add("extremadamenteSucia");
             suciedad = ( azar.nextDouble() * 0.36 ) + 0.64;
         } else {
+            listaVariablesEntradas.remove("extremadamenteSucia");
             extremadamenteSucia = false;
         }
     }//GEN-LAST:event_jtbExtSuciaItemStateChanged
@@ -867,8 +892,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbMuySuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMuySuciaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             muySucia = true;
+            listaVariablesEntradas.add("muySucia");
             suciedad = ( azar.nextDouble() * 0.56 ) + 0.34;
         } else {
+            listaVariablesEntradas.remove("muySucia");
             muySucia = false;
         }
     }//GEN-LAST:event_jtbMuySuciaItemStateChanged
@@ -876,8 +903,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbSuciaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             sucia = true;
+            listaVariablesEntradas.add("sucia");
             suciedad = ( azar.nextDouble() * 0.54 ) + 0.1;
         } else {
+            listaVariablesEntradas.remove("sucia");
             sucia = false;
         }
     }//GEN-LAST:event_jtbSuciaItemStateChanged
@@ -885,8 +914,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbPocoSuciaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbPocoSuciaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             pocoSucia = true;
+            listaVariablesEntradas.add("pocoSucia");
             suciedad = azar.nextDouble() * 0.34;
         } else {
+            listaVariablesEntradas.remove("pocoSucia");
             pocoSucia = false;
         }
     }//GEN-LAST:event_jtbPocoSuciaItemStateChanged
@@ -894,8 +925,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbMasivaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMasivaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             masiva = true;
+            listaVariablesEntradas.add("masiva");
             cantidadRopa = azar.nextInt( 8 ) + 14;
         } else {
+            listaVariablesEntradas.remove("masiva");
             masiva = false;
         }
     }//GEN-LAST:event_jtbMasivaItemStateChanged
@@ -903,8 +936,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbGrandeItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbGrandeItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             grande = true;
+            listaVariablesEntradas.add("grande");
             cantidadRopa = azar.nextInt( 12 ) + 8;
         } else {
+            listaVariablesEntradas.remove("grande");
             grande = false;
         }
     }//GEN-LAST:event_jtbGrandeItemStateChanged
@@ -912,8 +947,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbMedianaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbMedianaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             mediana = true;
+            listaVariablesEntradas.add("mediana");
             cantidadRopa = azar.nextInt( 12 ) + 2;
         } else {
+            listaVariablesEntradas.remove("mediana");
             mediana = false;
         }
     }//GEN-LAST:event_jtbMedianaItemStateChanged
@@ -921,8 +958,10 @@ public class FrameLavadora extends javax.swing.JFrame {
     private void jtbPequenaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jtbPequenaItemStateChanged
         if ( evt.getStateChange() == ItemEvent.SELECTED ) {
             pequena = true;
+            listaVariablesEntradas.add("pequena");
             cantidadRopa = azar.nextInt( 9 );
         } else {
+            listaVariablesEntradas.remove("pequena");
             pequena = false;
         }
     }//GEN-LAST:event_jtbPequenaItemStateChanged
@@ -955,6 +994,7 @@ public class FrameLavadora extends javax.swing.JFrame {
             tempFria = FuncionesMembresia.membershipTriangular(temperatura, 15.0, 15.0, 37.5);
             tempCalida = FuncionesMembresia.membershipTriangular(temperatura, 37.5, 60.0, 60.0);
             tempTemplada = FuncionesMembresia.membershipTriangular(temperatura, 19.5, 37.5, 55.5);
+            
             
             // Definicion de reglas
             double r1 = Math.min( Math.min( Math.min( tipoColor, pSucia ), cantPequena ),tempFria);
@@ -1973,10 +2013,2564 @@ public class FrameLavadora extends javax.swing.JFrame {
 
     private void jbtnMostrarReglasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnMostrarReglasActionPerformed
         // TODO add your handling code here:
+        //Creacion de objetos de reglas
+        ArrayList<Regla> listaObjetos = new ArrayList<Regla>();
+//         boolean[] informacion = {
+//            color,
+//            blanca,
+//            deportiva,
+//            toallas, 
+//            sabanas,
+//            extremadamenteSucia,
+//            muySucia,
+//            sucia,
+//            pocoSucia,
+//            masiva,
+//            grande,
+//            mediana,
+//            pequena,
+//            fria,
+//            calida,
+//            templada
+//        }; 
+//        
+//        for (int i = 0; i < informacion.length; i++) {
+//            if (informacion[i]) {
+//                System.out.println("La variable en el índice " + i + " es verdadera");
+//            } else {
+//                System.out.println("La variable en el índice " + i + " es falsa");
+//            }
+//        }
         
+        Regla r1 = new Regla(); 
+        Regla r2 = new Regla(); 
+        Regla r3 = new Regla(); 
+        Regla r4 = new Regla(); 
+        Regla r5 = new Regla(); 
+        Regla r6 = new Regla(); 
+        Regla r7 = new Regla(); 
+        Regla r8 = new Regla(); 
+        Regla r9 = new Regla(); 
+        Regla r10 = new Regla();
+        Regla r11 = new Regla();
+        Regla r12 = new Regla();
+        Regla r13 = new Regla();
+        Regla r14 = new Regla();
+        Regla r15 = new Regla();
+        Regla r16 = new Regla();
+        Regla r17 = new Regla();
+        Regla r18 = new Regla();
+        Regla r19 = new Regla();
+        Regla r20 = new Regla();
+        Regla r21 = new Regla();
+        Regla r22 = new Regla();
+        Regla r23 = new Regla();
+        Regla r24 = new Regla();
+        Regla r25 = new Regla();
+        Regla r26 = new Regla();
+        Regla r27 = new Regla();
+        Regla r28 = new Regla();
+        Regla r29 = new Regla();
+        Regla r30 = new Regla();
+        Regla r31 = new Regla();
+        Regla r32 = new Regla();
+        Regla r33 = new Regla();
+        Regla r34 = new Regla();
+        Regla r35 = new Regla();
+        Regla r36 = new Regla();
+        Regla r37 = new Regla();
+        Regla r38 = new Regla();
+        Regla r39 = new Regla();
+        Regla r40 = new Regla();
+        Regla r41 = new Regla();
+        Regla r42 = new Regla();
+        Regla r43 = new Regla();
+        Regla r44 = new Regla();
+        Regla r45 = new Regla();
+        Regla r46 = new Regla();
+        Regla r47 = new Regla();
+        Regla r48 = new Regla();
+        Regla r49 = new Regla();
+        Regla r50 = new Regla();
+        Regla r51 = new Regla();
+        Regla r52 = new Regla();
+        Regla r53 = new Regla();
+        Regla r54 = new Regla();
+        Regla r55 = new Regla();
+        Regla r56 = new Regla();
+        Regla r57 = new Regla();
+        Regla r58 = new Regla();
+        Regla r59 = new Regla();
+        Regla r60 = new Regla();
+        Regla r61 = new Regla();
+        Regla r62 = new Regla();
+        Regla r63 = new Regla();
+        Regla r64 = new Regla();
+        Regla r65 = new Regla();
+        Regla r66 = new Regla();
+        Regla r67 = new Regla();
+        Regla r68 = new Regla();
+        Regla r69 = new Regla();
+        Regla r70 = new Regla();
+        Regla r71 = new Regla();
+        Regla r72 = new Regla();
+        Regla r73 = new Regla();
+        Regla r74 = new Regla();
+        Regla r75 = new Regla();
+        Regla r76 = new Regla();
+        Regla r77 = new Regla();
+        Regla r78 = new Regla();
+        Regla r79 = new Regla();
+        Regla r80 = new Regla();
+        Regla r81 = new Regla();
+        Regla r82 = new Regla();
+        Regla r83 = new Regla();
+        Regla r84 = new Regla();
+        Regla r85 = new Regla();
+        Regla r86 = new Regla();
+        Regla r87 = new Regla();
+        Regla r88 = new Regla();
+        Regla r89 = new Regla();
+        Regla r90 = new Regla();
+        Regla r91 = new Regla();
+        Regla r92 = new Regla();
+        Regla r93 = new Regla();
+        Regla r94 = new Regla();
+        Regla r95 = new Regla();
+        Regla r96 = new Regla();
+        Regla r97 = new Regla();
+        Regla r98 = new Regla();
+        Regla r99 = new Regla();
+        Regla r100 = new Regla();
+        Regla r101 = new Regla();
+        Regla r102 = new Regla();
+        Regla r103 = new Regla();
+        Regla r104 = new Regla();
+        Regla r105 = new Regla();
+        Regla r106 = new Regla();
+        Regla r107 = new Regla();
+        Regla r108 = new Regla();
+        Regla r109 = new Regla();
+        Regla r110 = new Regla();
+        Regla r111 = new Regla();
+        Regla r112 = new Regla();
+        Regla r113 = new Regla();
+        Regla r114 = new Regla();
+        Regla r115 = new Regla();
+        Regla r116 = new Regla();
+        Regla r117 = new Regla();
+        Regla r118 = new Regla();
+        Regla r119 = new Regla();
+        Regla r120 = new Regla();
+        Regla r121 = new Regla();
+        Regla r122 = new Regla();
+        Regla r123 = new Regla();
+        Regla r124 = new Regla();
+        Regla r125 = new Regla();
+        Regla r126 = new Regla();
+        Regla r127 = new Regla();
+        Regla r128 = new Regla();
+        Regla r129 = new Regla();
+        Regla r130 = new Regla();
+        Regla r131 = new Regla();
+        Regla r132 = new Regla();
+        Regla r133 = new Regla();
+        Regla r134 = new Regla();
+        Regla r135 = new Regla();
+        Regla r136 = new Regla();
+        Regla r137 = new Regla();
+        Regla r138 = new Regla();
+        Regla r139 = new Regla();
+        Regla r140 = new Regla();
+        Regla r141 = new Regla();
+        Regla r142 = new Regla();
+        Regla r143 = new Regla();
+        Regla r144 = new Regla();
+        Regla r145 = new Regla();
+        Regla r146 = new Regla();
+        Regla r147 = new Regla();
+        Regla r148 = new Regla();
+        Regla r149 = new Regla();
+        Regla r150 = new Regla();
+        Regla r151 = new Regla();
+        Regla r152 = new Regla();
+        Regla r153 = new Regla();
+        Regla r154 = new Regla();
+        Regla r155 = new Regla();
+        Regla r156 = new Regla();
+        Regla r157 = new Regla();
+        Regla r158 = new Regla();
+        Regla r159 = new Regla();
+        Regla r160 = new Regla();
+        Regla r161 = new Regla();
+        Regla r162 = new Regla();
+        Regla r163 = new Regla();
+        Regla r164 = new Regla();
+        Regla r165 = new Regla();
+        Regla r166 = new Regla();
+        Regla r167 = new Regla();
+        Regla r168 = new Regla();
+        Regla r169 = new Regla();
+        Regla r170 = new Regla();
+        Regla r171 = new Regla();
+        Regla r172 = new Regla();
+        Regla r173 = new Regla();
+        Regla r174 = new Regla();
+        Regla r175 = new Regla();
+        Regla r176 = new Regla();
+        Regla r177 = new Regla();
+        Regla r178 = new Regla();
+        Regla r179 = new Regla();
+        Regla r180 = new Regla();
+        Regla r181 = new Regla();
+        Regla r182 = new Regla();
+        Regla r183 = new Regla();
+        Regla r184 = new Regla();
+        Regla r185 = new Regla();
+        Regla r186 = new Regla();
+        Regla r187 = new Regla();
+        Regla r188 = new Regla();
+        Regla r189 = new Regla();
+        Regla r190 = new Regla();
+        Regla r191 = new Regla();
+        Regla r192 = new Regla();
+        Regla r193 = new Regla();
+        Regla r194 = new Regla();
+        Regla r195 = new Regla();
+        Regla r196 = new Regla();
+        Regla r197 = new Regla();
+        Regla r198 = new Regla();
+        Regla r199 = new Regla();
+        Regla r200 = new Regla();
+        Regla r201 = new Regla();
+        Regla r202 = new Regla();
+        Regla r203 = new Regla();
+        Regla r204 = new Regla();
+        Regla r205 = new Regla();
+        Regla r206 = new Regla();
+        Regla r207 = new Regla();
+        Regla r208 = new Regla();
+        Regla r209 = new Regla();
+        Regla r210 = new Regla();
+        Regla r211 = new Regla();
+        Regla r212 = new Regla();
+        Regla r213 = new Regla();
+        Regla r214 = new Regla();
+        Regla r215 = new Regla();
+        Regla r216 = new Regla();
+        Regla r217 = new Regla();
+        Regla r218 = new Regla();
+        Regla r219 = new Regla();
+        Regla r220 = new Regla();
+        Regla r221 = new Regla();
+        Regla r222 = new Regla();
+        Regla r223 = new Regla();
+        Regla r224 = new Regla();
+        Regla r225 = new Regla();
+        Regla r226 = new Regla();
+        Regla r227 = new Regla();
+        Regla r228 = new Regla();
+        Regla r229 = new Regla();
+        Regla r230 = new Regla();
+        Regla r231 = new Regla();
+        Regla r232 = new Regla();
+        Regla r233 = new Regla();
+        Regla r234 = new Regla();
+        Regla r235 = new Regla();
+        Regla r236 = new Regla();
+        Regla r237 = new Regla();
+        Regla r238 = new Regla();
+        Regla r239 = new Regla();
+        Regla r240 = new Regla();
+        r1.setTipoColor(true);
+        r1.setpSucia(true);
+        r1.setPequena(true);
+        r1.setFria(true);
         
+        r2.setTipoBlanca(true);
+        r2.setpSucia(true);
+        r2.setPequena(true);
+        r2.setFria(true);
+
+        r3.setTipoDeportiva(true);
+        r3.setpSucia(true);
+        r3.setPequena(true);
+        r3.setFria(true);
+
+        r4.setTipoToallas(true);
+        r4.setpSucia(true);
+        r4.setPequena(true);
+        r4.setFria(true);
+
+        r5.setTipoSabanas(true);
+        r5.setpSucia(true);
+        r5.setPequena(true);
+        r5.setFria(true);
+
+        r6.setTipoColor(true);
+        r6.setSucia(true);
+        r6.setPequena(true);
+        r6.setFria(true);
+
+        r7.setTipoBlanca(true);
+        r7.setSucia(true);
+        r7.setPequena(true);
+        r7.setFria(true);
+
+        r8.setTipoDeportiva(true);
+        r8.setSucia(true);
+        r8.setPequena(true);
+        r8.setFria(true);
+
+        r9.setTipoToallas(true);
+        r9.setSucia(true);
+        r9.setPequena(true);
+        r9.setFria(true);
+
+        r10.setTipoSabanas(true);
+        r10.setSucia(true);
+        r10.setPequena(true);
+        r10.setFria(true);
+
+        r11.setTipoColor(true);
+        r11.setmSucia(true);
+        r11.setPequena(true);
+        r11.setFria(true);
+
+        r12.setTipoBlanca(true);
+        r12.setmSucia(true);
+        r12.setPequena(true);
+        r12.setFria(true);
+
+        r13.setTipoDeportiva(true);
+        r13.setmSucia(true);
+        r13.setPequena(true);
+        r13.setFria(true);
+
+        r14.setTipoToallas(true);
+        r14.setmSucia(true);
+        r14.setPequena(true);
+        r14.setFria(true);
+
+        r15.setTipoSabanas(true);
+        r15.setmSucia(true);
+        r15.setPequena(true);
+        r15.setFria(true);
+
+        r16.setTipoColor(true);
+        r16.seteSucia(true);
+        r16.setPequena(true);
+        r16.setFria(true);
+
+        r17.setTipoBlanca(true);
+        r17.seteSucia(true);
+        r17.setPequena(true);
+        r17.setFria(true);
+
+        r18.setTipoDeportiva(true);
+        r18.seteSucia(true);
+        r18.setPequena(true);
+        r18.setFria(true);
+
+        r19.setTipoToallas(true);
+        r19.seteSucia(true);
+        r19.setPequena(true);
+        r19.setFria(true);
+
+        r20.setTipoSabanas(true);
+        r20.seteSucia(true);
+        r20.setPequena(true);
+        r20.setFria(true);
+
+        r21.setTipoColor(true);
+        r21.setpSucia(true);
+        r21.setMediana(true);
+        r21.setFria(true);
+
+        r22.setTipoBlanca(true);
+        r22.setpSucia(true);
+        r22.setMediana(true);
+        r22.setFria(true);
+
+        r23.setTipoDeportiva(true);
+        r23.setpSucia(true);
+        r23.setMediana(true);
+        r23.setFria(true);
+
+        r24.setTipoToallas(true);
+        r24.setpSucia(true);
+        r24.setMediana(true);
+        r24.setFria(true);
+
+        r25.setTipoSabanas(true);
+        r25.setpSucia(true);
+        r25.setMediana(true);
+        r25.setFria(true);
+
+        r26.setTipoColor(true);
+        r26.setSucia(true);
+        r26.setMediana(true);
+        r26.setFria(true);
+
+        r27.setTipoBlanca(true);
+        r27.setSucia(true);
+        r27.setMediana(true);
+        r27.setFria(true);
+
+        r28.setTipoDeportiva(true);
+        r28.setSucia(true);
+        r28.setMediana(true);
+        r28.setFria(true);
+
+        r29.setTipoToallas(true);
+        r29.setSucia(true);
+        r29.setMediana(true);
+        r29.setFria(true);
+
+        r30.setTipoSabanas(true);
+        r30.setSucia(true);
+        r30.setMediana(true);
+        r30.setFria(true);
+
+        r31.setTipoColor(true);
+        r31.setmSucia(true);
+        r31.setMediana(true);
+        r31.setFria(true);
+
+        r32.setTipoBlanca(true);
+        r32.setmSucia(true);
+        r32.setMediana(true);
+        r32.setFria(true);
+
+        r33.setTipoDeportiva(true);
+        r33.setmSucia(true);
+        r33.setMediana(true);
+        r33.setFria(true);
+
+        r34.setTipoToallas(true);
+        r34.setmSucia(true);
+        r34.setMediana(true);
+        r34.setFria(true);
+
+        r35.setTipoSabanas(true);
+        r35.setmSucia(true);
+        r35.setMediana(true);
+        r35.setFria(true);
+
+        r36.setTipoColor(true);
+        r36.seteSucia(true);
+        r36.setMediana(true);
+        r36.setFria(true);
+
+        r37.setTipoBlanca(true);
+        r37.seteSucia(true);
+        r37.setMediana(true);
+        r37.setFria(true);
+
+        r38.setTipoDeportiva(true);
+        r38.seteSucia(true);
+        r38.setMediana(true);
+        r38.setFria(true);
+
+        r39.setTipoToallas(true);
+        r39.seteSucia(true);
+        r39.setMediana(true);
+        r39.setFria(true);
+
+        r40.setTipoSabanas(true);
+        r40.seteSucia(true);
+        r40.setMediana(true);
+        r40.setFria(true);
+
+        r41.setTipoColor(true);
+        r41.setpSucia(true);
+        r41.setGrande(true);
+        r41.setFria(true);
+
+        r42.setTipoBlanca(true);
+        r42.setpSucia(true);
+        r42.setGrande(true);
+        r42.setFria(true);
+
+        r43.setTipoDeportiva(true);
+        r43.setpSucia(true);
+        r43.setGrande(true);
+        r43.setFria(true);
+
+        r44.setTipoToallas(true);
+        r44.setpSucia(true);
+        r44.setGrande(true);
+        r44.setFria(true);
+
+        r45.setTipoSabanas(true);
+        r45.setpSucia(true);
+        r45.setGrande(true);
+        r45.setFria(true);
+
+        r46.setTipoColor(true);
+        r46.setSucia(true);
+        r46.setGrande(true);
+        r46.setFria(true);
+
+        r47.setTipoBlanca(true);
+        r47.setSucia(true);
+        r47.setGrande(true);
+        r47.setFria(true);
+
+        r48.setTipoDeportiva(true);
+        r48.setSucia(true);
+        r48.setGrande(true);
+        r48.setFria(true);
+
+        r49.setTipoToallas(true);
+        r49.setSucia(true);
+        r49.setGrande(true);
+        r49.setFria(true);
+
+        r50.setTipoSabanas(true);
+        r50.setSucia(true);
+        r50.setGrande(true);
+        r50.setFria(true);
+
+        r51.setTipoColor(true);
+        r51.setmSucia(true);
+        r51.setGrande(true);
+        r51.setFria(true);
+
+        r52.setTipoBlanca(true);
+        r52.setmSucia(true);
+        r52.setGrande(true);
+        r52.setFria(true);
+
+        r53.setTipoDeportiva(true);
+        r53.setmSucia(true);
+        r53.setGrande(true);
+        r53.setFria(true);
+
+        r54.setTipoToallas(true);
+        r54.setmSucia(true);
+        r54.setGrande(true);
+        r54.setFria(true);
+
+        r55.setTipoSabanas(true);
+        r55.setmSucia(true);
+        r55.setGrande(true);
+        r55.setFria(true);
+
+        r56.setTipoColor(true);
+        r56.seteSucia(true);
+        r56.setGrande(true);
+        r56.setFria(true);
+
+        r57.setTipoBlanca(true);
+        r57.seteSucia(true);
+        r57.setGrande(true);
+        r57.setFria(true);
+
+        r58.setTipoDeportiva(true);
+        r58.seteSucia(true);
+        r58.setGrande(true);
+        r58.setFria(true);
+
+        r59.setTipoToallas(true);
+        r59.seteSucia(true);
+        r59.setGrande(true);
+        r59.setFria(true);
+
+        r60.setTipoSabanas(true);
+        r60.seteSucia(true);
+        r60.setGrande(true);
+        r60.setFria(true);
+
+        r61.setTipoColor(true);
+        r61.setpSucia(true);
+        r61.setMasiva(true);
+        r61.setFria(true);
+
+        r62.setTipoBlanca(true);
+        r62.setpSucia(true);
+        r62.setMasiva(true);
+        r62.setFria(true);
+
+        r63.setTipoDeportiva(true);
+        r63.setpSucia(true);
+        r63.setMasiva(true);
+        r63.setFria(true);
+
+        r64.setTipoToallas(true);
+        r64.setpSucia(true);
+        r64.setMasiva(true);
+        r64.setFria(true);
+
+        r65.setTipoSabanas(true);
+        r65.setpSucia(true);
+        r65.setMasiva(true);
+        r65.setFria(true);
+
+        r66.setTipoColor(true);
+        r66.setSucia(true);
+        r66.setMasiva(true);
+        r66.setFria(true);
+
+        r67.setTipoBlanca(true);
+        r67.setSucia(true);
+        r67.setMasiva(true);
+        r67.setFria(true);
+
+        r68.setTipoDeportiva(true);
+        r68.setSucia(true);
+        r68.setMasiva(true);
+        r68.setFria(true);
+
+        r69.setTipoToallas(true);
+        r69.setSucia(true);
+        r69.setMasiva(true);
+        r69.setFria(true);
+
+        r70.setTipoSabanas(true);
+        r70.setSucia(true);
+        r70.setMasiva(true);
+        r70.setFria(true);
+
+        r71.setTipoColor(true);
+        r71.setmSucia(true);
+        r71.setMasiva(true);
+        r71.setFria(true);
+
+        r72.setTipoBlanca(true);
+        r72.setmSucia(true);
+        r72.setMasiva(true);
+        r72.setFria(true);
+
+        r73.setTipoDeportiva(true);
+        r73.setmSucia(true);
+        r73.setMasiva(true);
+        r73.setFria(true);
+
+        r74.setTipoToallas(true);
+        r74.setmSucia(true);
+        r74.setMasiva(true);
+        r74.setFria(true);
+
+        r75.setTipoSabanas(true);
+        r75.setmSucia(true);
+        r75.setMasiva(true);
+        r75.setFria(true);
+
+        r76.setTipoColor(true);
+        r76.seteSucia(true);
+        r76.setMasiva(true);
+        r76.setFria(true);
+
+        r77.setTipoBlanca(true);
+        r77.seteSucia(true);
+        r77.setMasiva(true);
+        r77.setFria(true);
+
+        r78.setTipoDeportiva(true);
+        r78.seteSucia(true);
+        r78.setMasiva(true);
+        r78.setFria(true);
+
+        r79.setTipoToallas(true);
+        r79.seteSucia(true);
+        r79.setMasiva(true);
+        r79.setFria(true);
+
+        r80.setTipoSabanas(true);
+        r80.seteSucia(true);
+        r80.setMasiva(true);
+        r80.setFria(true);
+
+        r81.setTipoColor(true);
+        r81.setpSucia(true);
+        r81.setPequena(true);
+        r81.setCalida(true);
+
+        r82.setTipoBlanca(true);
+        r82.setpSucia(true);
+        r82.setPequena(true);
+        r82.setCalida(true);
+
+        r83.setTipoDeportiva(true);
+        r83.setpSucia(true);
+        r83.setPequena(true);
+        r83.setCalida(true);
+
+        r84.setTipoToallas(true);
+        r84.setpSucia(true);
+        r84.setPequena(true);
+        r84.setCalida(true);
+
+        r85.setTipoSabanas(true);
+        r85.setpSucia(true);
+        r85.setPequena(true);
+        r85.setCalida(true);
+
+        r86.setTipoColor(true);
+        r86.setSucia(true);
+        r86.setPequena(true);
+        r86.setCalida(true);
+
+        r87.setTipoBlanca(true);
+        r87.setSucia(true);
+        r87.setPequena(true);
+        r87.setCalida(true);
+
+        r88.setTipoDeportiva(true);
+        r88.setSucia(true);
+        r88.setPequena(true);
+        r88.setCalida(true);
+
+        r89.setTipoToallas(true);
+        r89.setSucia(true);
+        r89.setPequena(true);
+        r89.setCalida(true);
+
+        r90.setTipoSabanas(true);
+        r90.setSucia(true);
+        r90.setPequena(true);
+        r90.setCalida(true);
+
+        r91.setTipoColor(true);
+        r91.setmSucia(true);
+        r91.setPequena(true);
+        r91.setCalida(true);
+
+        r92.setTipoBlanca(true);
+        r92.setmSucia(true);
+        r92.setPequena(true);
+        r92.setCalida(true);
+
+        r93.setTipoDeportiva(true);
+        r93.setmSucia(true);
+        r93.setPequena(true);
+        r93.setCalida(true);
+
+        r94.setTipoToallas(true);
+        r94.setmSucia(true);
+        r94.setPequena(true);
+        r94.setCalida(true);
+
+        r95.setTipoSabanas(true);
+        r95.setmSucia(true);
+        r95.setPequena(true);
+        r95.setCalida(true);
+
+        r96.setTipoColor(true);
+        r96.seteSucia(true);
+        r96.setPequena(true);
+        r96.setCalida(true);
+
+        r97.setTipoBlanca(true);
+        r97.seteSucia(true);
+        r97.setPequena(true);
+        r97.setCalida(true);
+
+        r98.setTipoDeportiva(true);
+        r98.seteSucia(true);
+        r98.setPequena(true);
+        r98.setCalida(true);
+
+        r99.setTipoToallas(true);
+        r99.seteSucia(true);
+        r99.setPequena(true);
+        r99.setCalida(true);
+
+        r100.setTipoSabanas(true);
+        r100.seteSucia(true);
+        r100.setPequena(true);
+        r100.setCalida(true);
+
+        r101.setTipoColor(true);
+        r101.setpSucia(true);
+        r101.setMediana(true);
+        r101.setCalida(true);
+
+        r102.setTipoBlanca(true);
+        r102.setpSucia(true);
+        r102.setMediana(true);
+        r102.setCalida(true);
+
+        r103.setTipoDeportiva(true);
+        r103.setpSucia(true);
+        r103.setMediana(true);
+        r103.setCalida(true);
+
+        r104.setTipoToallas(true);
+        r104.setpSucia(true);
+        r104.setMediana(true);
+        r104.setCalida(true);
+
+        r105.setTipoSabanas(true);
+        r105.setpSucia(true);
+        r105.setMediana(true);
+        r105.setCalida(true);
+
+        r106.setTipoColor(true);
+        r106.setSucia(true);
+        r106.setMediana(true);
+        r106.setCalida(true);
+
+        r107.setTipoBlanca(true);
+        r107.setSucia(true);
+        r107.setMediana(true);
+        r107.setCalida(true);
+
+        r108.setTipoDeportiva(true);
+        r108.setSucia(true);
+        r108.setMediana(true);
+        r108.setCalida(true);
+
+        r109.setTipoToallas(true);
+        r109.setSucia(true);
+        r109.setMediana(true);
+        r109.setCalida(true);
+
+        r110.setTipoSabanas(true);
+        r110.setSucia(true);
+        r110.setMediana(true);
+        r110.setCalida(true);
+
+        r111.setTipoColor(true);
+        r111.setmSucia(true);
+        r111.setMediana(true);
+        r111.setCalida(true);
+
+        r112.setTipoBlanca(true);
+        r112.setmSucia(true);
+        r112.setMediana(true);
+        r112.setCalida(true);
+
+        r113.setTipoDeportiva(true);
+        r113.setmSucia(true);
+        r113.setMediana(true);
+        r113.setCalida(true);
+
+        r114.setTipoToallas(true);
+        r114.setmSucia(true);
+        r114.setMediana(true);
+        r114.setCalida(true);
+
+        r115.setTipoSabanas(true);
+        r115.setmSucia(true);
+        r115.setMediana(true);
+        r115.setCalida(true);
+
+        r116.setTipoColor(true);
+        r116.seteSucia(true);
+        r116.setMediana(true);
+        r116.setCalida(true);
+
+        r117.setTipoBlanca(true);
+        r117.seteSucia(true);
+        r117.setMediana(true);
+        r117.setCalida(true);
+
+        r118.setTipoDeportiva(true);
+        r118.seteSucia(true);
+        r118.setMediana(true);
+        r118.setCalida(true);
+
+        r119.setTipoToallas(true);
+        r119.seteSucia(true);
+        r119.setMediana(true);
+        r119.setCalida(true);
+
+        r120.setTipoSabanas(true);
+        r120.seteSucia(true);
+        r120.setMediana(true);
+        r120.setCalida(true);
+
+        r121.setTipoColor(true);
+        r121.setpSucia(true);
+        r121.setGrande(true);
+        r121.setCalida(true);
+
+        r122.setTipoBlanca(true);
+        r122.setpSucia(true);
+        r122.setGrande(true);
+        r122.setCalida(true);
+
+        r123.setTipoDeportiva(true);
+        r123.setpSucia(true);
+        r123.setGrande(true);
+        r123.setCalida(true);
+
+        r124.setTipoToallas(true);
+        r124.setpSucia(true);
+        r124.setGrande(true);
+        r124.setCalida(true);
+
+        r125.setTipoSabanas(true);
+        r125.setpSucia(true);
+        r125.setGrande(true);
+        r125.setCalida(true);
+
+        r126.setTipoColor(true);
+        r126.setSucia(true);
+        r126.setGrande(true);
+        r126.setCalida(true);
+
+        r127.setTipoBlanca(true);
+        r127.setSucia(true);
+        r127.setGrande(true);
+        r127.setCalida(true);
+
+        r128.setTipoDeportiva(true);
+        r128.setSucia(true);
+        r128.setGrande(true);
+        r128.setCalida(true);
+
+        r129.setTipoToallas(true);
+        r129.setSucia(true);
+        r129.setGrande(true);
+        r129.setCalida(true);
+
+        r130.setTipoSabanas(true);
+        r130.setSucia(true);
+        r130.setGrande(true);
+        r130.setCalida(true);
+
+        r131.setTipoColor(true);
+        r131.setmSucia(true);
+        r131.setGrande(true);
+        r131.setCalida(true);
+
+        r132.setTipoBlanca(true);
+        r132.setmSucia(true);
+        r132.setGrande(true);
+        r132.setCalida(true);
+
+        r133.setTipoDeportiva(true);
+        r133.setmSucia(true);
+        r133.setGrande(true);
+        r133.setCalida(true);
+
+        r134.setTipoToallas(true);
+        r134.setmSucia(true);
+        r134.setGrande(true);
+        r134.setCalida(true);
+
+        r135.setTipoSabanas(true);
+        r135.setmSucia(true);
+        r135.setGrande(true);
+        r135.setCalida(true);
+
+        r136.setTipoColor(true);
+        r136.seteSucia(true);
+        r136.setGrande(true);
+        r136.setCalida(true);
+
+        r137.setTipoBlanca(true);
+        r137.seteSucia(true);
+        r137.setGrande(true);
+        r137.setCalida(true);
+
+        r138.setTipoDeportiva(true);
+        r138.seteSucia(true);
+        r138.setGrande(true);
+        r138.setCalida(true);
+
+        r139.setTipoToallas(true);
+        r139.seteSucia(true);
+        r139.setGrande(true);
+        r139.setCalida(true);
+
+        r140.setTipoSabanas(true);
+        r140.seteSucia(true);
+        r140.setGrande(true);
+        r140.setCalida(true);
+
+        r141.setTipoColor(true);
+        r141.setpSucia(true);
+        r141.setMasiva(true);
+        r141.setCalida(true);
+
+        r142.setTipoBlanca(true);
+        r142.setpSucia(true);
+        r142.setMasiva(true);
+        r142.setCalida(true);
+
+        r143.setTipoDeportiva(true);
+        r143.setpSucia(true);
+        r143.setMasiva(true);
+        r143.setCalida(true);
+
+        r144.setTipoToallas(true);
+        r144.setpSucia(true);
+        r144.setMasiva(true);
+        r144.setCalida(true);
+
+        r145.setTipoSabanas(true);
+        r145.setpSucia(true);
+        r145.setMasiva(true);
+        r145.setCalida(true);
+
+        r146.setTipoColor(true);
+        r146.setSucia(true);
+        r146.setMasiva(true);
+        r146.setCalida(true);
+
+        r147.setTipoBlanca(true);
+        r147.setSucia(true);
+        r147.setMasiva(true);
+        r147.setCalida(true);
+
+        r148.setTipoDeportiva(true);
+        r148.setSucia(true);
+        r148.setMasiva(true);
+        r148.setCalida(true);
+
+        r149.setTipoToallas(true);
+        r149.setSucia(true);
+        r149.setMasiva(true);
+        r149.setCalida(true);
+
+        r150.setTipoSabanas(true);
+        r150.setSucia(true);
+        r150.setMasiva(true);
+        r150.setCalida(true);
+
+        r151.setTipoColor(true);
+        r151.setmSucia(true);
+        r151.setMasiva(true);
+        r151.setCalida(true);
+
+        r152.setTipoBlanca(true);
+        r152.setmSucia(true);
+        r152.setMasiva(true);
+        r152.setCalida(true);
+
+        r153.setTipoDeportiva(true);
+        r153.setmSucia(true);
+        r153.setMasiva(true);
+        r153.setCalida(true);
+
+        r154.setTipoToallas(true);
+        r154.setmSucia(true);
+        r154.setMasiva(true);
+        r154.setCalida(true);
+
+        r155.setTipoSabanas(true);
+        r155.setmSucia(true);
+        r155.setMasiva(true);
+        r155.setCalida(true);
+
+        r156.setTipoColor(true);
+        r156.seteSucia(true);
+        r156.setMasiva(true);
+        r156.setCalida(true);
+
+        r157.setTipoBlanca(true);
+        r157.seteSucia(true);
+        r157.setMasiva(true);
+        r157.setCalida(true);
+
+        r158.setTipoDeportiva(true);
+        r158.seteSucia(true);
+        r158.setMasiva(true);
+        r158.setCalida(true);
+
+        r159.setTipoToallas(true);
+        r159.seteSucia(true);
+        r159.setMasiva(true);
+        r159.setCalida(true);
+
+        r160.setTipoSabanas(true);
+        r160.seteSucia(true);
+        r160.setMasiva(true);
+        r160.setCalida(true);
+
+        r161.setTipoColor(true);
+        r161.setpSucia(true);
+        r161.setPequena(true);
+        r161.setTemplada(true);
+
+        r162.setTipoBlanca(true);
+        r162.setpSucia(true);
+        r162.setPequena(true);
+        r162.setTemplada(true);
+
+        r163.setTipoDeportiva(true);
+        r163.setpSucia(true);
+        r163.setPequena(true);
+        r163.setTemplada(true);
+
+        r164.setTipoToallas(true);
+        r164.setpSucia(true);
+        r164.setPequena(true);
+        r164.setTemplada(true);
+
+        r165.setTipoSabanas(true);
+        r165.setpSucia(true);
+        r165.setPequena(true);
+        r165.setTemplada(true);
+
+        r166.setTipoColor(true);
+        r166.setSucia(true);
+        r166.setPequena(true);
+        r166.setTemplada(true);
+
+        r167.setTipoBlanca(true);
+        r167.setSucia(true);
+        r167.setPequena(true);
+        r167.setTemplada(true);
+
+        r168.setTipoDeportiva(true);
+        r168.setSucia(true);
+        r168.setPequena(true);
+        r168.setTemplada(true);
+
+        r169.setTipoToallas(true);
+        r169.setSucia(true);
+        r169.setPequena(true);
+        r169.setTemplada(true);
+
+        r170.setTipoSabanas(true);
+        r170.setSucia(true);
+        r170.setPequena(true);
+        r170.setTemplada(true);
+
+        r171.setTipoColor(true);
+        r171.setmSucia(true);
+        r171.setPequena(true);
+        r171.setTemplada(true);
+
+        r172.setTipoBlanca(true);
+        r172.setmSucia(true);
+        r172.setPequena(true);
+        r172.setTemplada(true);
+
+        r173.setTipoDeportiva(true);
+        r173.setmSucia(true);
+        r173.setPequena(true);
+        r173.setTemplada(true);
+
+        r174.setTipoToallas(true);
+        r174.setmSucia(true);
+        r174.setPequena(true);
+        r174.setTemplada(true);
+
+        r175.setTipoSabanas(true);
+        r175.setmSucia(true);
+        r175.setPequena(true);
+        r175.setTemplada(true);
+
+        r176.setTipoColor(true);
+        r176.seteSucia(true);
+        r176.setPequena(true);
+        r176.setTemplada(true);
+
+        r177.setTipoBlanca(true);
+        r177.seteSucia(true);
+        r177.setPequena(true);
+        r177.setTemplada(true);
+
+        r178.setTipoDeportiva(true);
+        r178.seteSucia(true);
+        r178.setPequena(true);
+        r178.setTemplada(true);
+
+        r179.setTipoToallas(true);
+        r179.seteSucia(true);
+        r179.setPequena(true);
+        r179.setTemplada(true);
+
+        r180.setTipoSabanas(true);
+        r180.seteSucia(true);
+        r180.setPequena(true);
+        r180.setTemplada(true);
+
+        r181.setTipoColor(true);
+        r181.setpSucia(true);
+        r181.setMediana(true);
+        r181.setTemplada(true);
+
+        r182.setTipoBlanca(true);
+        r182.setpSucia(true);
+        r182.setMediana(true);
+        r182.setTemplada(true);
+
+        r183.setTipoDeportiva(true);
+        r183.setpSucia(true);
+        r183.setMediana(true);
+        r183.setTemplada(true);
+
+        r184.setTipoToallas(true);
+        r184.setpSucia(true);
+        r184.setMediana(true);
+        r184.setTemplada(true);
+
+        r185.setTipoSabanas(true);
+        r185.setpSucia(true);
+        r185.setMediana(true);
+        r185.setTemplada(true);
+
+        r186.setTipoColor(true);
+        r186.setSucia(true);
+        r186.setMediana(true);
+        r186.setTemplada(true);
+
+        r187.setTipoBlanca(true);
+        r187.setSucia(true);
+        r187.setMediana(true);
+        r187.setTemplada(true);
+
+        r188.setTipoDeportiva(true);
+        r188.setSucia(true);
+        r188.setMediana(true);
+        r188.setTemplada(true);
+
+        r189.setTipoToallas(true);
+        r189.setSucia(true);
+        r189.setMediana(true);
+        r189.setTemplada(true);
+
+        r190.setTipoSabanas(true);
+        r190.setSucia(true);
+        r190.setMediana(true);
+        r190.setTemplada(true);
+
+        r191.setTipoColor(true);
+        r191.setmSucia(true);
+        r191.setMediana(true);
+        r191.setTemplada(true);
+
+        r192.setTipoBlanca(true);
+        r192.setmSucia(true);
+        r192.setMediana(true);
+        r192.setTemplada(true);
+
+        r193.setTipoDeportiva(true);
+        r193.setmSucia(true);
+        r193.setMediana(true);
+        r193.setTemplada(true);
+
+        r194.setTipoToallas(true);
+        r194.setmSucia(true);
+        r194.setMediana(true);
+        r194.setTemplada(true);
+
+        r195.setTipoSabanas(true);
+        r195.setmSucia(true);
+        r195.setMediana(true);
+        r195.setTemplada(true);
+
+        r196.setTipoColor(true);
+        r196.seteSucia(true);
+        r196.setMediana(true);
+        r196.setTemplada(true);
+
+        r197.setTipoBlanca(true);
+        r197.seteSucia(true);
+        r197.setMediana(true);
+        r197.setTemplada(true);
+
+        r198.setTipoDeportiva(true);
+        r198.seteSucia(true);
+        r198.setMediana(true);
+        r198.setTemplada(true);
+
+        r199.setTipoToallas(true);
+        r199.seteSucia(true);
+        r199.setMediana(true);
+        r199.setTemplada(true);
+
+        r200.setTipoSabanas(true);
+        r200.seteSucia(true);
+        r200.setMediana(true);
+        r200.setTemplada(true);
+
+        r201.setTipoColor(true);
+        r201.setpSucia(true);
+        r201.setGrande(true);
+        r201.setTemplada(true);
+
+        r202.setTipoBlanca(true);
+        r202.setpSucia(true);
+        r202.setGrande(true);
+        r202.setTemplada(true);
+
+        r203.setTipoDeportiva(true);
+        r203.setpSucia(true);
+        r203.setGrande(true);
+        r203.setTemplada(true);
+
+        r204.setTipoToallas(true);
+        r204.setpSucia(true);
+        r204.setGrande(true);
+        r204.setTemplada(true);
+
+        r205.setTipoSabanas(true);
+        r205.setpSucia(true);
+        r205.setGrande(true);
+        r205.setTemplada(true);
+
+        r206.setTipoColor(true);
+        r206.setSucia(true);
+        r206.setGrande(true);
+        r206.setTemplada(true);
+
+        r207.setTipoBlanca(true);
+        r207.setSucia(true);
+        r207.setGrande(true);
+        r207.setTemplada(true);
+
+        r208.setTipoDeportiva(true);
+        r208.setSucia(true);
+        r208.setGrande(true);
+        r208.setTemplada(true);
+
+        r209.setTipoToallas(true);
+        r209.setSucia(true);
+        r209.setGrande(true);
+        r209.setTemplada(true);
+
+        r210.setTipoSabanas(true);
+        r210.setSucia(true);
+        r210.setGrande(true);
+        r210.setTemplada(true);
+
+        r211.setTipoColor(true);
+        r211.setmSucia(true);
+        r211.setGrande(true);
+        r211.setTemplada(true);
+
+        r212.setTipoBlanca(true);
+        r212.setmSucia(true);
+        r212.setGrande(true);
+        r212.setTemplada(true);
+
+        r213.setTipoDeportiva(true);
+        r213.setmSucia(true);
+        r213.setGrande(true);
+        r213.setTemplada(true);
+
+        r214.setTipoToallas(true);
+        r214.setmSucia(true);
+        r214.setGrande(true);
+        r214.setTemplada(true);
+
+        r215.setTipoSabanas(true);
+        r215.setmSucia(true);
+        r215.setGrande(true);
+        r215.setTemplada(true);
+
+        r216.setTipoColor(true);
+        r216.seteSucia(true);
+        r216.setGrande(true);
+        r216.setTemplada(true);
+
+        r217.setTipoBlanca(true);
+        r217.seteSucia(true);
+        r217.setGrande(true);
+        r217.setTemplada(true);
+
+        r218.setTipoDeportiva(true);
+        r218.seteSucia(true);
+        r218.setGrande(true);
+        r218.setTemplada(true);
+
+        r219.setTipoToallas(true);
+        r219.seteSucia(true);
+        r219.setGrande(true);
+        r219.setTemplada(true);
+
+        r220.setTipoSabanas(true);
+        r220.seteSucia(true);
+        r220.setGrande(true);
+        r220.setTemplada(true);
+
+        r221.setTipoColor(true);
+        r221.setpSucia(true);
+        r221.setMasiva(true);
+        r221.setTemplada(true);
+
+        r222.setTipoBlanca(true);
+        r222.setpSucia(true);
+        r222.setMasiva(true);
+        r222.setTemplada(true);
+
+        r223.setTipoDeportiva(true);
+        r223.setpSucia(true);
+        r223.setMasiva(true);
+        r223.setTemplada(true);
+
+        r224.setTipoToallas(true);
+        r224.setpSucia(true);
+        r224.setMasiva(true);
+        r224.setTemplada(true);
+
+        r225.setTipoSabanas(true);
+        r225.setpSucia(true);
+        r225.setMasiva(true);
+        r225.setTemplada(true);
+
+        r226.setTipoColor(true);
+        r226.setSucia(true);
+        r226.setMasiva(true);
+        r226.setTemplada(true);
+
+        r227.setTipoBlanca(true);
+        r227.setSucia(true);
+        r227.setMasiva(true);
+        r227.setTemplada(true);
+
+        r228.setTipoDeportiva(true);
+        r228.setSucia(true);
+        r228.setMasiva(true);
+        r228.setTemplada(true);
+
+        r229.setTipoToallas(true);
+        r229.setSucia(true);
+        r229.setMasiva(true);
+        r229.setTemplada(true);
+
+        r230.setTipoSabanas(true);
+        r230.setSucia(true);
+        r230.setMasiva(true);
+        r230.setTemplada(true);
+
+        r231.setTipoColor(true);
+        r231.setmSucia(true);
+        r231.setMasiva(true);
+        r231.setTemplada(true);
+
+        r232.setTipoBlanca(true);
+        r232.setmSucia(true);
+        r232.setMasiva(true);
+        r232.setTemplada(true);
+
+        r233.setTipoDeportiva(true);
+        r233.setmSucia(true);
+        r233.setMasiva(true);
+        r233.setTemplada(true);
+
+        r234.setTipoToallas(true);
+        r234.setmSucia(true);
+        r234.setMasiva(true);
+        r234.setTemplada(true);
+
+        r235.setTipoSabanas(true);
+        r235.setmSucia(true);
+        r235.setMasiva(true);
+        r235.setTemplada(true);
+
+        r236.setTipoColor(true);
+        r236.seteSucia(true);
+        r236.setMasiva(true);
+        r236.setTemplada(true);
+
+        r237.setTipoBlanca(true);
+        r237.seteSucia(true);
+        r237.setMasiva(true);
+        r237.setTemplada(true);
+
+        r238.setTipoDeportiva(true);
+        r238.seteSucia(true);
+        r238.setMasiva(true);
+        r238.setTemplada(true);
+
+        r239.setTipoToallas(true);
+        r239.seteSucia(true);
+        r239.setMasiva(true);
+        r239.setTemplada(true);
+
+        r240.setTipoSabanas(true);
+        r240.seteSucia(true);
+        r240.setMasiva(true);
+        r240.setTemplada(true);
+        
+        r1.setlMuyCorto(true);
+        r2.setlMuyCorto(true);
+        r3.setlMuyCorto(true);
+        r4.setlMuyCorto(true);
+        r5.setlMuyCorto(true);
+        r6.setlMuyCorto(true);
+        r7.setlMuyCorto(true);
+        r8.setlMuyCorto(true);
+        r9.setlMuyCorto(true);
+        r10.setlMuyCorto(true);
+        r11.setlCorto(true);
+        r12.setlCorto(true);
+        r13.setlCorto(true);
+        r14.setlCorto(true);
+        r15.setlCorto(true);
+        r16.setlCorto(true);
+        r17.setlCorto(true);
+        r18.setlCorto(true);
+        r19.setlCorto(true);
+        r20.setlCorto(true);
+        r21.setlMedio(true);
+        r22.setlMedio(true);
+        r23.setlMedio(true);
+        r24.setlMedio(true);
+        r25.setlMedio(true);
+        r26.setlMedio(true);
+        r27.setlMedio(true);
+        r28.setlMedio(true);
+        r29.setlLargo(true);
+        r30.setlLargo(true);
+        r31.setlLargo(true);
+        r32.setlLargo(true);
+        r33.setlMedio(true);
+        r34.setlMuyLargo(true);
+        r35.setlMuyLargo(true);
+        r36.setlLargo(true);
+        r37.setlLargo(true);
+        r38.setlMedio(true);
+        r39.setlMuyLargo(true);
+        r40.setlMuyLargo(true);
+        r41.setlMedio(true);
+        r42.setlLargo(true);
+        r43.setlMedio(true);
+        r44.setlLargo(true);
+        r45.setlLargo(true);
+        r46.setlMedio(true);
+        r47.setlLargo(true);
+        r48.setlMedio(true);
+        r49.setlLargo(true);
+        r50.setlLargo(true);
+        r51.setlLargo(true);
+        r52.setlLargo(true);
+        r53.setlMedio(true);
+        r54.setlMuyLargo(true);
+        r55.setlMuyLargo(true);
+        r56.setlMuyLargo(true);
+        r57.setlMuyLargo(true);
+        r58.setlLargo(true);
+        r59.setlMuyLargo(true);
+        r60.setlMuyLargo(true);
+        r61.setlMedio(true);
+        r62.setlMedio(true);
+        r63.setlMedio(true);
+        r64.setlLargo(true);
+        r65.setlLargo(true);
+        r66.setlLargo(true);
+        r67.setlLargo(true);
+        r68.setlMedio(true);
+        r69.setlMuyLargo(true);
+        r70.setlMuyLargo(true);
+        r71.setlMuyLargo(true);
+        r72.setlMuyLargo(true);
+        r73.setlLargo(true);
+        r74.setlMuyLargo(true);
+        r75.setlMuyLargo(true);
+        r76.setlMuyLargo(true);
+        r77.setlMuyLargo(true);
+        r78.setlLargo(true);
+        r79.setlMuyLargo(true);
+        r80.setlMuyLargo(true);
+        r81.setlCorto(true);
+        r82.setlCorto(true);
+        r83.setlMuyCorto(true);
+        r84.setlCorto(true);
+        r85.setlCorto(true);
+        r86.setlCorto(true);
+        r87.setlCorto(true);
+        r88.setlMuyCorto(true);
+        r89.setlMedio(true);
+        r90.setlMedio(true);
+        r91.setlMedio(true);
+        r92.setlMedio(true);
+        r93.setlCorto(true);
+        r94.setlLargo(true);
+        r95.setlLargo(true);
+        r96.setlLargo(true);
+        r97.setlLargo(true);
+        r98.setlMedio(true);
+        r99.setlLargo(true);
+        r100.setlLargo(true);
+        r101.setlMedio(true);
+        r102.setlMedio(true);
+        r103.setlCorto(true);
+        r104.setlLargo(true);
+        r105.setlLargo(true);
+        r106.setlMedio(true);
+        r107.setlMedio(true);
+        r108.setlCorto(true);
+        r109.setlLargo(true);
+        r110.setlLargo(true);
+        r111.setlMedio(true);
+        r112.setlMedio(true);
+        r113.setlMedio(true);
+        r114.setlLargo(true);
+        r115.setlLargo(true);
+        r116.setlLargo(true);
+        r117.setlLargo(true);
+        r118.setlMedio(true);
+        r119.setlLargo(true);
+        r120.setlLargo(true);
+        r121.setlMedio(true);
+        r122.setlMedio(true);
+        r123.setlCorto(true);
+        r124.setlMedio(true);
+        r125.setlMedio(true);
+        r126.setlMedio(true);
+        r127.setlMedio(true);
+        r128.setlCorto(true);
+        r129.setlLargo(true);
+        r130.setlLargo(true);
+        r131.setlLargo(true);
+        r132.setlLargo(true);
+        r133.setlMedio(true);
+        r134.setlLargo(true);
+        r135.setlLargo(true);
+        r136.setlLargo(true);
+        r137.setlLargo(true);
+        r138.setlMedio(true);
+        r139.setlMuyLargo(true);
+        r140.setlMuyLargo(true);
+        r141.setlMedio(true);
+        r142.setlMedio(true);
+        r143.setlCorto(true);
+        r144.setlLargo(true);
+        r145.setlLargo(true);
+        r146.setlMedio(true);
+        r147.setlMedio(true);
+        r148.setlCorto(true);
+        r149.setlLargo(true);
+        r150.setlLargo(true);
+        r151.setlLargo(true);
+        r152.setlLargo(true);
+        r153.setlMedio(true);
+        r154.setlLargo(true);
+        r155.setlLargo(true);
+        r156.setlLargo(true);
+        r157.setlLargo(true);
+        r158.setlMedio(true);
+        r159.setlMuyLargo(true);
+        r160.setlMuyLargo(true);
+        r161.setlMuyCorto(true);
+        r162.setlMuyCorto(true);
+        r163.setlMuyCorto(true);
+        r164.setlCorto(true);
+        r165.setlCorto(true);
+        r166.setlMuyCorto(true);
+        r167.setlMuyCorto(true);
+        r168.setlMuyCorto(true);
+        r169.setlCorto(true);
+        r170.setlCorto(true);
+        r171.setlCorto(true);
+        r172.setlCorto(true);
+        r173.setlMuyCorto(true);
+        r174.setlMedio(true);
+        r175.setlMedio(true);
+        r176.setlCorto(true);
+        r177.setlCorto(true);
+        r178.setlCorto(true);
+        r179.setlMedio(true);
+        r180.setlMedio(true);
+        r181.setlCorto(true);
+        r182.setlCorto(true);
+        r183.setlCorto(true);
+        r184.setlMedio(true);
+        r185.setlMedio(true);
+        r186.setlCorto(true);
+        r187.setlCorto(true);
+        r188.setlCorto(true);
+        r189.setlMedio(true);
+        r190.setlMedio(true);
+        r191.setlMedio(true);
+        r192.setlMedio(true);
+        r193.setlCorto(true);
+        r194.setlLargo(true);
+        r195.setlLargo(true);
+        r196.setlMedio(true);
+        r197.setlMedio(true);
+        r198.setlMedio(true);
+        r199.setlLargo(true);
+        r200.setlLargo(true);
+        r201.setlMedio(true);
+        r202.setlMedio(true);
+        r203.setlCorto(true);
+        r204.setlMedio(true);
+        r205.setlMedio(true);
+        r206.setlMedio(true);
+        r207.setlMedio(true);
+        r208.setlCorto(true);
+        r209.setlMedio(true);
+        r210.setlMedio(true);
+        r211.setlLargo(true);
+        r212.setlLargo(true);
+        r213.setlMedio(true);
+        r214.setlLargo(true);
+        r215.setlLargo(true);
+        r216.setlLargo(true);
+        r217.setlLargo(true);
+        r218.setlMedio(true);
+        r219.setlLargo(true);
+        r220.setlLargo(true);
+        r221.setlMedio(true);
+        r222.setlMedio(true);
+        r223.setlCorto(true);
+        r224.setlMedio(true);
+        r225.setlMedio(true);
+        r226.setlMedio(true);
+        r227.setlMedio(true);
+        r228.setlMedio(true);
+        r229.setlLargo(true);
+        r230.setlLargo(true);
+        r231.setlMedio(true);
+        r232.setlMedio(true);
+        r233.setlMedio(true);
+        r234.setlLargo(true);
+        r235.setlLargo(true);
+        r236.setlLargo(true);
+        r237.setlLargo(true);
+        r238.setlMedio(true);
+        r239.setlMuyLargo(true);
+        r240.setlMuyLargo(true);
+        
+        r1.seteMuyCorto(true);
+        r2.seteMuyCorto(true);
+        r3.seteMuyCorto(true);
+        r4.seteMuyCorto(true);
+        r5.seteMuyCorto(true);
+        r6.seteMuyCorto(true);
+        r7.seteMuyCorto(true);
+        r8.seteMuyCorto(true);
+        r9.seteMuyCorto(true);
+        r10.seteMuyCorto(true);
+        r11.seteCorto(true);
+        r12.seteCorto(true);
+        r13.seteCorto(true);
+        r14.seteCorto(true);
+        r15.seteCorto(true);
+        r16.seteCorto(true);
+        r17.seteCorto(true);
+        r18.seteCorto(true);
+        r19.seteCorto(true);
+        r20.seteCorto(true);
+        r21.seteMedio(true);
+        r22.seteMedio(true);
+        r23.seteMedio(true);
+        r24.seteMedio(true);
+        r25.seteMedio(true);
+        r26.seteMedio(true);
+        r27.seteMedio(true);
+        r28.seteMedio(true);
+        r29.seteLargo(true);
+        r30.seteLargo(true);
+        r31.seteLargo(true);
+        r32.seteLargo(true);
+        r33.seteMedio(true);
+        r34.seteMuyLargo(true);
+        r35.seteMuyLargo(true);
+        r36.seteLargo(true);
+        r37.seteLargo(true);
+        r38.seteMedio(true);
+        r39.seteMuyLargo(true);
+        r40.seteMuyLargo(true);
+        r41.seteMedio(true);
+        r42.seteLargo(true);
+        r43.seteMedio(true);
+        r44.seteLargo(true);
+        r45.seteLargo(true);
+        r46.seteMedio(true);
+        r47.seteLargo(true);
+        r48.seteMedio(true);
+        r49.seteLargo(true);
+        r50.seteLargo(true);
+        r51.seteLargo(true);
+        r52.seteLargo(true);
+        r53.seteMedio(true);
+        r54.seteMuyLargo(true);
+        r55.seteMuyLargo(true);
+        r56.seteMuyLargo(true);
+        r57.seteMuyLargo(true);
+        r58.seteLargo(true);
+        r59.seteMuyLargo(true);
+        r60.seteMuyLargo(true);
+        r61.seteMedio(true);
+        r62.seteMedio(true);
+        r63.seteMedio(true);
+        r64.seteLargo(true);
+        r65.seteLargo(true);
+        r66.seteLargo(true);
+        r67.seteLargo(true);
+        r68.seteMedio(true);
+        r69.seteMuyLargo(true);
+        r70.seteMuyLargo(true);
+        r71.seteMuyLargo(true);
+        r72.seteMuyLargo(true);
+        r73.seteLargo(true);
+        r74.seteMuyLargo(true);
+        r75.seteMuyLargo(true);
+        r76.seteMuyLargo(true);
+        r77.seteMuyLargo(true);
+        r78.seteLargo(true);
+        r79.seteMuyLargo(true);
+        r80.seteMuyLargo(true);
+        r81.seteCorto(true);
+        r82.seteCorto(true);
+        r83.seteMuyCorto(true);
+        r84.seteCorto(true);
+        r85.seteCorto(true);
+        r86.seteCorto(true);
+        r87.seteCorto(true);
+        r88.seteMuyCorto(true);
+        r89.seteMedio(true);
+        r90.seteMedio(true);
+        r91.seteMedio(true);
+        r92.seteMedio(true);
+        r93.seteCorto(true);
+        r94.seteLargo(true);
+        r95.seteLargo(true);
+        r96.seteLargo(true);
+        r97.seteLargo(true);
+        r98.seteMedio(true);
+        r99.seteLargo(true);
+        r100.seteLargo(true);
+        r101.seteMedio(true);
+        r102.seteMedio(true);
+        r103.seteCorto(true);
+        r104.seteLargo(true);
+        r105.seteLargo(true);
+        r106.seteMedio(true);
+        r107.seteMedio(true);
+        r108.seteCorto(true);
+        r109.seteLargo(true);
+        r110.seteLargo(true);
+        r111.seteMedio(true);
+        r112.seteMedio(true);
+        r113.seteMedio(true);
+        r114.seteLargo(true);
+        r115.seteLargo(true);
+        r116.seteLargo(true);
+        r117.seteLargo(true);
+        r118.seteMedio(true);
+        r119.seteLargo(true);
+        r120.seteLargo(true);
+        r121.seteMedio(true);
+        r122.seteMedio(true);
+        r123.seteCorto(true);
+        r124.seteMedio(true);
+        r125.seteMedio(true);
+        r126.seteMedio(true);
+        r127.seteMedio(true);
+        r128.seteCorto(true);
+        r129.seteLargo(true);
+        r130.seteLargo(true);
+        r131.seteLargo(true);
+        r132.seteLargo(true);
+        r133.seteMedio(true);
+        r134.seteLargo(true);
+        r135.seteLargo(true);
+        r136.seteLargo(true);
+        r137.seteLargo(true);
+        r138.seteMedio(true);
+        r139.seteMuyLargo(true);
+        r140.seteMuyLargo(true);
+        r141.seteMedio(true);
+        r142.seteMedio(true);
+        r143.seteCorto(true);
+        r144.seteLargo(true);
+        r145.seteLargo(true);
+        r146.seteMedio(true);
+        r147.seteMedio(true);
+        r148.seteCorto(true);
+        r149.seteLargo(true);
+        r150.seteLargo(true);
+        r151.seteLargo(true);
+        r152.seteLargo(true);
+        r153.seteMedio(true);
+        r154.seteLargo(true);
+        r155.seteLargo(true);
+        r156.seteLargo(true);
+        r157.seteLargo(true);
+        r158.seteMedio(true);
+        r159.seteMuyLargo(true);
+        r160.seteMuyLargo(true);
+        r161.seteMuyCorto(true);
+        r162.seteMuyCorto(true);
+        r163.seteMuyCorto(true);
+        r164.seteCorto(true);
+        r165.seteCorto(true);
+        r166.seteMuyCorto(true);
+        r167.seteMuyCorto(true);
+        r168.seteMuyCorto(true);
+        r169.seteCorto(true);
+        r170.seteCorto(true);
+        r171.seteCorto(true);
+        r172.seteCorto(true);
+        r173.seteMuyCorto(true);
+        r174.seteMedio(true);
+        r175.seteMedio(true);
+        r176.seteCorto(true);
+        r177.seteCorto(true);
+        r178.seteCorto(true);
+        r179.seteMedio(true);
+        r180.seteMedio(true);
+        r181.seteCorto(true);
+        r182.seteCorto(true);
+        r183.seteCorto(true);
+        r184.seteMedio(true);
+        r185.seteMedio(true);
+        r186.seteCorto(true);
+        r187.seteCorto(true);
+        r188.seteCorto(true);
+        r189.seteMedio(true);
+        r190.seteMedio(true);
+        r191.seteMedio(true);
+        r192.seteMedio(true);
+        r193.seteCorto(true);
+        r194.seteLargo(true);
+        r195.seteLargo(true);
+        r196.seteMedio(true);
+        r197.seteMedio(true);
+        r198.seteMedio(true);
+        r199.seteLargo(true);
+        r200.seteLargo(true);
+        r201.seteMedio(true);
+        r202.seteMedio(true);
+        r203.seteCorto(true);
+        r204.seteMedio(true);
+        r205.seteMedio(true);
+        r206.seteMedio(true);
+        r207.seteMedio(true);
+        r208.seteCorto(true);
+        r209.seteMedio(true);
+        r210.seteMedio(true);
+        r211.seteLargo(true);
+        r212.seteLargo(true);
+        r213.seteMedio(true);
+        r214.seteLargo(true);
+        r215.seteLargo(true);
+        r216.seteLargo(true);
+        r217.seteLargo(true);
+        r218.seteMedio(true);
+        r219.seteLargo(true);
+        r220.seteLargo(true);
+        r221.seteMedio(true);
+        r222.seteMedio(true);
+        r223.seteCorto(true);
+        r224.seteMedio(true);
+        r225.seteMedio(true);
+        r226.seteMedio(true);
+        r227.seteMedio(true);
+        r228.seteMedio(true);
+        r229.seteLargo(true);
+        r230.seteLargo(true);
+        r231.seteMedio(true);
+        r232.seteMedio(true);
+        r233.seteMedio(true);
+        r234.seteLargo(true);
+        r235.seteLargo(true);
+        r236.seteLargo(true);
+        r237.seteLargo(true);
+        r238.seteMedio(true);
+        r239.seteMuyLargo(true);
+        r240.seteMuyLargo(true);
+        
+        r1.setMuyLento(true);
+        r2.setMuyLento(true);
+        r3.setMuyLento(true);
+        r4.setMuyLento(true);
+        r5.setMuyLento(true);
+        r6.setMuyLento(true);
+        r7.setMuyLento(true);
+        r8.setMuyLento(true);
+        r9.setMuyLento(true);
+        r10.setMuyLento(true);
+        r11.setBajo(true);
+        r12.setBajo(true);
+        r13.setBajo(true);
+        r14.setBajo(true);
+        r15.setBajo(true);
+        r16.setMedio(true);
+        r17.setMedio(true);
+        r18.setMedio(true);
+        r19.setMedio(true);
+        r20.setMedio(true);
+        r21.setBajo(true);
+        r22.setBajo(true);
+        r23.setBajo(true);
+        r24.setBajo(true);
+        r25.setBajo(true);
+        r26.setRapido(true);
+        r27.setMedio(true);
+        r28.setMedio(true);
+        r29.setMedio(true);
+        r30.setMedio(true);
+        r31.setMedio(true);
+        r32.setMedio(true);
+        r33.setRapido(true);
+        r34.setRapido(true);
+        r35.setRapido(true);
+        r36.setRapido(true);
+        r37.setRapido(true);
+        r38.setMuyRapido(true);
+        r39.setMuyRapido(true);
+        r40.setMuyRapido(true);
+        r41.setMuyRapido(true);
+        r42.setRapido(true);
+        r43.setRapido(true);
+        r44.setMedio(true);
+        r45.setMedio(true);
+        r46.setRapido(true);
+        r47.setRapido(true);
+        r48.setRapido(true);
+        r49.setBajo(true);
+        r50.setBajo(true);
+        r51.setRapido(true);
+        r52.setRapido(true);
+        r53.setMuyRapido(true);
+        r54.setBajo(true);
+        r55.setBajo(true);
+        r56.setMedio(true);
+        r57.setMedio(true);
+        r58.setRapido(true);
+        r59.setMuyLento(true);
+        r60.setMuyLento(true);
+        r61.setMedio(true);
+        r62.setMedio(true);
+        r63.setMedio(true);
+        r64.setMuyLento(true);
+        r65.setMuyLento(true);
+        r66.setBajo(true);
+        r67.setBajo(true);
+        r68.setMedio(true);
+        r69.setMuyLento(true);
+        r70.setMuyLento(true);
+        r71.setBajo(true);
+        r72.setBajo(true);
+        r73.setMedio(true);
+        r74.setMuyLento(true);
+        r75.setMuyLento(true);
+        r76.setBajo(true);
+        r77.setBajo(true);
+        r78.setMedio(true);
+        r79.setMuyLento(true);
+        r80.setMuyLento(true);
+        r81.setRapido(true);
+        r82.setRapido(true);
+        r83.setMuyRapido(true);
+        r84.setMedio(true);
+        r85.setMedio(true);
+        r86.setRapido(true);
+        r87.setRapido(true);
+        r88.setMuyRapido(true);
+        r89.setMedio(true);
+        r90.setMedio(true);
+        r91.setRapido(true);
+        r92.setRapido(true);
+        r93.setMuyRapido(true);
+        r94.setMedio(true);
+        r95.setMedio(true);
+        r96.setRapido(true);
+        r97.setRapido(true);
+        r98.setMuyRapido(true);
+        r99.setMedio(true);
+        r100.setMedio(true);
+        r101.setMedio(true);
+        r102.setMedio(true);
+        r103.setRapido(true);
+        r104.setMedio(true);
+        r105.setMedio(true);
+        r106.setMedio(true);
+        r107.setMedio(true);
+        r108.setRapido(true);
+        r109.setMedio(true);
+        r110.setMedio(true);
+        r111.setBajo(true);
+        r112.setBajo(true);
+        r113.setMedio(true);
+        r114.setBajo(true);
+        r115.setBajo(true);
+        r116.setBajo(true);
+        r117.setBajo(true);
+        r118.setMedio(true);
+        r119.setBajo(true);
+        r120.setBajo(true);
+        r121.setBajo(true);
+        r122.setBajo(true);
+        r123.setMedio(true);
+        r124.setBajo(true);
+        r125.setBajo(true);
+        r126.setBajo(true);
+        r127.setBajo(true);
+        r128.setMedio(true);
+        r129.setBajo(true);
+        r130.setBajo(true);
+        r131.setBajo(true);
+        r132.setBajo(true);
+        r133.setMedio(true);
+        r134.setBajo(true);
+        r135.setBajo(true);
+        r136.setBajo(true);
+        r137.setBajo(true);
+        r138.setMedio(true);
+        r139.setBajo(true);
+        r140.setBajo(true);
+        r141.setBajo(true);
+        r142.setBajo(true);
+        r143.setMedio(true);
+        r144.setMuyLento(true);
+        r145.setMuyLento(true);
+        r146.setBajo(true);
+        r147.setBajo(true);
+        r148.setMedio(true);
+        r149.setMuyLento(true);
+        r150.setMuyLento(true);
+        r151.setBajo(true);
+        r152.setBajo(true);
+        r153.setMedio(true);
+        r154.setMuyLento(true);
+        r155.setMuyLento(true);
+        r156.setBajo(true);
+        r157.setBajo(true);
+        r158.setMedio(true);
+        r159.setMuyLento(true);
+        r160.setMuyLento(true);
+        r161.setRapido(true);
+        r162.setRapido(true);
+        r163.setMuyRapido(true);
+        r164.setMedio(true);
+        r165.setMedio(true);
+        r166.setRapido(true);
+        r167.setRapido(true);
+        r168.setMuyRapido(true);
+        r169.setMedio(true);
+        r170.setMedio(true);
+        r171.setRapido(true);
+        r172.setRapido(true);
+        r173.setMuyRapido(true);
+        r174.setMedio(true);
+        r175.setMedio(true);
+        r176.setRapido(true);
+        r177.setRapido(true);
+        r178.setMuyRapido(true);
+        r179.setMedio(true);
+        r180.setMedio(true);
+        r181.setRapido(true);
+        r182.setRapido(true);
+        r183.setMuyRapido(true);
+        r184.setMedio(true);
+        r185.setMedio(true);
+        r186.setRapido(true);
+        r187.setRapido(true);
+        r188.setMuyRapido(true);
+        r189.setMedio(true);
+        r190.setMedio(true);
+        r191.setRapido(true);
+        r192.setRapido(true);
+        r193.setMuyRapido(true);
+        r194.setMedio(true);
+        r195.setMedio(true);
+        r196.setRapido(true);
+        r197.setRapido(true);
+        r198.setMuyRapido(true);
+        r199.setMedio(true);
+        r200.setMedio(true);
+        r201.setMedio(true);
+        r202.setMedio(true);
+        r203.setRapido(true);
+        r204.setBajo(true);
+        r205.setBajo(true);
+        r206.setMedio(true);
+        r207.setMedio(true);
+        r208.setRapido(true);
+        r209.setBajo(true);
+        r210.setBajo(true);
+        r211.setMedio(true);
+        r212.setMedio(true);
+        r213.setRapido(true);
+        r214.setBajo(true);
+        r215.setBajo(true);
+        r216.setMedio(true);
+        r217.setMedio(true);
+        r218.setRapido(true);
+        r219.setBajo(true);
+        r220.setBajo(true);
+        r221.setBajo(true);
+        r222.setBajo(true);
+        r223.setMedio(true);
+        r224.setMuyLento(true);
+        r225.setMuyLento(true);
+        r226.setBajo(true);
+        r227.setBajo(true);
+        r228.setMedio(true);
+        r229.setMuyLento(true);
+        r230.setMuyLento(true);
+        r231.setBajo(true);
+        r232.setBajo(true);
+        r233.setMedio(true);
+        r234.setMuyLento(true);
+        r235.setMuyLento(true);
+        r236.setBajo(true);
+        r237.setBajo(true);
+        r238.setMedio(true);
+        r239.setMuyLento(true);
+        r240.setMuyLento(true);
+        
+        listaObjetos.add(r1);
+        listaObjetos.add(r2);
+        listaObjetos.add(r3);
+        listaObjetos.add(r4);
+        listaObjetos.add(r5);
+        listaObjetos.add(r6);
+        listaObjetos.add(r7);
+        listaObjetos.add(r8);
+        listaObjetos.add(r9);
+        listaObjetos.add(r10);
+        listaObjetos.add(r11);
+        listaObjetos.add(r12);
+        listaObjetos.add(r13);
+        listaObjetos.add(r14);
+        listaObjetos.add(r15);
+        listaObjetos.add(r16);
+        listaObjetos.add(r17);
+        listaObjetos.add(r18);
+        listaObjetos.add(r19);
+        listaObjetos.add(r20);
+        listaObjetos.add(r21);
+        listaObjetos.add(r22);
+        listaObjetos.add(r23);
+        listaObjetos.add(r24);
+        listaObjetos.add(r25);
+        listaObjetos.add(r26);
+        listaObjetos.add(r27);
+        listaObjetos.add(r28);
+        listaObjetos.add(r29);
+        listaObjetos.add(r30);
+        listaObjetos.add(r31);
+        listaObjetos.add(r32);
+        listaObjetos.add(r33);
+        listaObjetos.add(r34);
+        listaObjetos.add(r35);
+        listaObjetos.add(r36);
+        listaObjetos.add(r37);
+        listaObjetos.add(r38);
+        listaObjetos.add(r39);
+        listaObjetos.add(r40);
+        listaObjetos.add(r41);
+        listaObjetos.add(r42);
+        listaObjetos.add(r43);
+        listaObjetos.add(r44);
+        listaObjetos.add(r45);
+        listaObjetos.add(r46);
+        listaObjetos.add(r47);
+        listaObjetos.add(r48);
+        listaObjetos.add(r49);
+        listaObjetos.add(r50);
+        listaObjetos.add(r51);
+        listaObjetos.add(r52);
+        listaObjetos.add(r53);
+        listaObjetos.add(r54);
+        listaObjetos.add(r55);
+        listaObjetos.add(r56);
+        listaObjetos.add(r57);
+        listaObjetos.add(r58);
+        listaObjetos.add(r59);
+        listaObjetos.add(r60);
+        listaObjetos.add(r61);
+        listaObjetos.add(r62);
+        listaObjetos.add(r63);
+        listaObjetos.add(r64);
+        listaObjetos.add(r65);
+        listaObjetos.add(r66);
+        listaObjetos.add(r67);
+        listaObjetos.add(r68);
+        listaObjetos.add(r69);
+        listaObjetos.add(r70);
+        listaObjetos.add(r71);
+        listaObjetos.add(r72);
+        listaObjetos.add(r73);
+        listaObjetos.add(r74);
+        listaObjetos.add(r75);
+        listaObjetos.add(r76);
+        listaObjetos.add(r77);
+        listaObjetos.add(r78);
+        listaObjetos.add(r79);
+        listaObjetos.add(r80);
+        listaObjetos.add(r81);
+        listaObjetos.add(r82);
+        listaObjetos.add(r83);
+        listaObjetos.add(r84);
+        listaObjetos.add(r85);
+        listaObjetos.add(r86);
+        listaObjetos.add(r87);
+        listaObjetos.add(r88);
+        listaObjetos.add(r89);
+        listaObjetos.add(r90);
+        listaObjetos.add(r91);
+        listaObjetos.add(r92);
+        listaObjetos.add(r93);
+        listaObjetos.add(r94);
+        listaObjetos.add(r95);
+        listaObjetos.add(r96);
+        listaObjetos.add(r97);
+        listaObjetos.add(r98);
+        listaObjetos.add(r99);
+        listaObjetos.add(r100);
+        listaObjetos.add(r101);
+        listaObjetos.add(r102);
+        listaObjetos.add(r103);
+        listaObjetos.add(r104);
+        listaObjetos.add(r105);
+        listaObjetos.add(r106);
+        listaObjetos.add(r107);
+        listaObjetos.add(r108);
+        listaObjetos.add(r109);
+        listaObjetos.add(r110);
+        listaObjetos.add(r111);
+        listaObjetos.add(r112);
+        listaObjetos.add(r113);
+        listaObjetos.add(r114);
+        listaObjetos.add(r115);
+        listaObjetos.add(r116);
+        listaObjetos.add(r117);
+        listaObjetos.add(r118);
+        listaObjetos.add(r119);
+        listaObjetos.add(r120);
+        listaObjetos.add(r121);
+        listaObjetos.add(r122);
+        listaObjetos.add(r123);
+        listaObjetos.add(r124);
+        listaObjetos.add(r125);
+        listaObjetos.add(r126);
+        listaObjetos.add(r127);
+        listaObjetos.add(r128);
+        listaObjetos.add(r129);
+        listaObjetos.add(r130);
+        listaObjetos.add(r131);
+        listaObjetos.add(r132);
+        listaObjetos.add(r133);
+        listaObjetos.add(r134);
+        listaObjetos.add(r135);
+        listaObjetos.add(r136);
+        listaObjetos.add(r137);
+        listaObjetos.add(r138);
+        listaObjetos.add(r139);
+        listaObjetos.add(r140);
+        listaObjetos.add(r141);
+        listaObjetos.add(r142);
+        listaObjetos.add(r143);
+        listaObjetos.add(r144);
+        listaObjetos.add(r145);
+        listaObjetos.add(r146);
+        listaObjetos.add(r147);
+        listaObjetos.add(r148);
+        listaObjetos.add(r149);
+        listaObjetos.add(r150);
+        listaObjetos.add(r151);
+        listaObjetos.add(r152);
+        listaObjetos.add(r153);
+        listaObjetos.add(r154);
+        listaObjetos.add(r155);
+        listaObjetos.add(r156);
+        listaObjetos.add(r157);
+        listaObjetos.add(r158);
+        listaObjetos.add(r159);
+        listaObjetos.add(r160);
+        listaObjetos.add(r161);
+        listaObjetos.add(r162);
+        listaObjetos.add(r163);
+        listaObjetos.add(r164);
+        listaObjetos.add(r165);
+        listaObjetos.add(r166);
+        listaObjetos.add(r167);
+        listaObjetos.add(r168);
+        listaObjetos.add(r169);
+        listaObjetos.add(r170);
+        listaObjetos.add(r171);
+        listaObjetos.add(r172);
+        listaObjetos.add(r173);
+        listaObjetos.add(r174);
+        listaObjetos.add(r175);
+        listaObjetos.add(r176);
+        listaObjetos.add(r177);
+        listaObjetos.add(r178);
+        listaObjetos.add(r179);
+        listaObjetos.add(r180);
+        listaObjetos.add(r181);
+        listaObjetos.add(r182);
+        listaObjetos.add(r183);
+        listaObjetos.add(r184);
+        listaObjetos.add(r185);
+        listaObjetos.add(r186);
+        listaObjetos.add(r187);
+        listaObjetos.add(r188);
+        listaObjetos.add(r189);
+        listaObjetos.add(r190);
+        listaObjetos.add(r191);
+        listaObjetos.add(r192);
+        listaObjetos.add(r193);
+        listaObjetos.add(r194);
+        listaObjetos.add(r195);
+        listaObjetos.add(r196);
+        listaObjetos.add(r197);
+        listaObjetos.add(r198);
+        listaObjetos.add(r199);
+        listaObjetos.add(r200);
+        listaObjetos.add(r201);
+        listaObjetos.add(r202);
+        listaObjetos.add(r203);
+        listaObjetos.add(r204);
+        listaObjetos.add(r205);
+        listaObjetos.add(r206);
+        listaObjetos.add(r207);
+        listaObjetos.add(r208);
+        listaObjetos.add(r209);
+        listaObjetos.add(r210);
+        listaObjetos.add(r211);
+        listaObjetos.add(r212);
+        listaObjetos.add(r213);
+        listaObjetos.add(r214);
+        listaObjetos.add(r215);
+        listaObjetos.add(r216);
+        listaObjetos.add(r217);
+        listaObjetos.add(r218);
+        listaObjetos.add(r219);
+        listaObjetos.add(r220);
+        listaObjetos.add(r221);
+        listaObjetos.add(r222);
+        listaObjetos.add(r223);
+        listaObjetos.add(r224);
+        listaObjetos.add(r225);
+        listaObjetos.add(r226);
+        listaObjetos.add(r227);
+        listaObjetos.add(r228);
+        listaObjetos.add(r229);
+        listaObjetos.add(r230);
+        listaObjetos.add(r231);
+        listaObjetos.add(r232);
+        listaObjetos.add(r233);
+        listaObjetos.add(r234);
+        listaObjetos.add(r235);
+        listaObjetos.add(r236);
+        listaObjetos.add(r237);
+        listaObjetos.add(r238);
+        listaObjetos.add(r239);
+        listaObjetos.add(r240);
+        int contador=0;
+        int index=0;
+        int indexObjeto=0;
+        String cadenaEntradas="";
+        for (Regla objeto : listaObjetos) {
+            for(int j=0; j<listaVariablesEntradas.size();j++){
+                if(objeto.isCalida()&&listaVariablesEntradas.get(j).contains("calida")){
+                    cadenaEntradas+="calida,";
+                    contador++;
+                }
+                if(objeto.isFria()&&listaVariablesEntradas.get(j).contains("fria")){
+                    cadenaEntradas+="fria,";
+                    contador++;
+                }
+                if(objeto.isTemplada()&&listaVariablesEntradas.get(j).contains("templada")){
+                    cadenaEntradas+="templada,";
+                    contador++;
+                }
+                if(objeto.isGrande()&&listaVariablesEntradas.get(j).contains("grande")){
+                    cadenaEntradas+="grande,";
+                    contador++;
+                }
+                if(objeto.isMasiva()&&listaVariablesEntradas.get(j).contains("masiva")){
+                    cadenaEntradas+="masiva,";
+                    contador++;
+                }
+                if(objeto.isMediana()&&listaVariablesEntradas.get(j).contains("mediana")){
+                    cadenaEntradas+="mediana,";
+                    contador++;
+                }
+                if(objeto.isPequena()&&listaVariablesEntradas.get(j).contains("pequena")){
+                    cadenaEntradas+="pequena,";
+                    contador++;
+                }
+                if(objeto.isSucia()&&listaVariablesEntradas.get(j).contains("sucia")){
+                    cadenaEntradas+="sucia,";
+                    contador++;
+                }
+                if(objeto.ispSucia()&&listaVariablesEntradas.get(j).contains("pocoSucia")){
+                    cadenaEntradas+="pocoSucia,";
+                    contador++;
+                }
+                if(objeto.ismSucia()&&listaVariablesEntradas.get(j).contains("muySucia")){
+                    cadenaEntradas+="muySucia,";
+                    contador++;
+                }
+                if(objeto.iseSucia()&&listaVariablesEntradas.get(j).contains("extremadamenteSucia")){
+                    cadenaEntradas+="extSucia,";
+                    contador++;
+                }
+                if(objeto.isTipoBlanca()&&listaVariablesEntradas.get(j).contains("blanca")){
+                    cadenaEntradas+="blanca,";
+                    contador++;
+                }
+                if(objeto.isTipoColor()&&listaVariablesEntradas.get(j).contains("color")){
+                    cadenaEntradas+="color,";
+                    contador++;
+                }
+                if(objeto.isTipoToallas()&&listaVariablesEntradas.get(j).contains("toallas")){
+                    cadenaEntradas+="toallas,";
+                    contador++;
+                }
+                if(objeto.isTipoDeportiva()&&listaVariablesEntradas.get(j).contains("deportiva")){
+                    cadenaEntradas+="deportiva,";
+                    contador++;
+                }
+                if(objeto.isTipoSabanas()&&listaVariablesEntradas.get(j).contains("sabanas")){
+                    cadenaEntradas+="sabanas,";
+                    contador++;
+                }
+            }
+            index++;
+            if(contador==3){
+                indexObjeto=index;
+                break;
+            }
+        }
+        String cadenaSalidas="";
+        Regla objetoFinal = listaObjetos.get(indexObjeto);
+        if(objetoFinal.isBajo()){
+            cadenaSalidas+="Rpm bajo,";
+        }
+        if(objetoFinal.isMuyLento()){
+            cadenaSalidas+="Rpm muy lento,";
+        }
+        if(objetoFinal.isMedio()){
+            cadenaSalidas+="Rpm medio,";
+        }
+        if(objetoFinal.isRapido()){
+            cadenaSalidas+="Rpm rapido,";
+        }
+        if(objetoFinal.isMuyRapido()){
+            cadenaSalidas+="Rpm muy rapido,";
+        }
+        if(objetoFinal.islMuyCorto()){
+            cadenaSalidas+="lavado muy corto,";
+        }
+        if(objetoFinal.islCorto()){
+            cadenaSalidas+="lavado corto,";
+        }
+        if(objetoFinal.islMedio()){
+            cadenaSalidas+="lavado medio,";
+        }
+        if(objetoFinal.islLargo()){
+            cadenaSalidas+="lavado largo,";
+        }
+        if(objetoFinal.islMuyLargo()){
+            cadenaSalidas+="lavado muy largo,";
+        }
+        if(objetoFinal.iseMuyCorto()){
+            cadenaSalidas+="enjuague muy corto,";
+        }
+        if(objetoFinal.iseCorto()){
+            cadenaSalidas+="enjuague corto,";
+        }
+        if(objetoFinal.iseMedio()){
+            cadenaSalidas+="enjuague medio,";
+        }
+        if(objetoFinal.iseLargo()){
+            cadenaSalidas+="enjuague largo,";
+        }
+        if(objetoFinal.iseMuyLargo()){
+            cadenaSalidas+="enjuague muy largo,";
+        }
         PanelReglasActivadas panel = new PanelReglasActivadas();
-        panel.setValueInPanel("Hola");
+        panel.setValueInPanel("Regla "+ indexObjeto+" = "+ cadenaEntradas + cadenaSalidas);
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
@@ -1988,6 +4582,10 @@ public class FrameLavadora extends javax.swing.JFrame {
         frame.setVisible( true );
         
     }//GEN-LAST:event_jbtnMostrarReglasActionPerformed
+
+    private void jtbColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtbColorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtbColorActionPerformed
 
     /**
      * @param args the command line arguments
